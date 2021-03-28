@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   /// Loads dat afrom a Rive file and initializes playback
   _loadRiveFile() async {
     // Load your Rive data
-    final data = await rootBundle.load('assets/web.riv');
+    final data = await rootBundle.load('asset/web.riv');
     // Create a RiveFile from the binary data
     final file = RiveFile();
     if (file.import(data)) {
@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: FadeInImage.memoryNetwork(
                               fit: BoxFit.cover,
                               placeholder: kTransparentImage,
-                              image: 'assets/aboutme.jpg'),
+                              image: 'asset/aboutme.jpg'),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(100.0),
@@ -227,7 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: FadeInImage.memoryNetwork(
                                         imageScale: 3,
                                         placeholder: kTransparentImage,
-                                        image: 'assets/picture.jpg'),
+                                        image: 'asset/picture.jpg'),
                                   ),
                                 ),
                               ),
@@ -248,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: FadeInImage.memoryNetwork(
                                 fit: BoxFit.cover,
                                 placeholder: kTransparentImage,
-                                image: 'assets/skills.jpg'),
+                                image: 'asset/skills.jpg'),
                           ),
                           Container(
                             height: height * 1.2,
@@ -346,7 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/projects.jpeg"),
+                          image: AssetImage("asset/projects.jpeg"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -368,7 +368,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/projects.jpeg"),
+                          image: AssetImage("asset/projects.jpeg"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -397,7 +397,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: FadeInImage.memoryNetwork(
                             fit: BoxFit.fitWidth,
                             placeholder: kTransparentImage,
-                            image: 'assets/contacts.jpg'),
+                            image: 'asset/contacts.jpg'),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(100.0),
