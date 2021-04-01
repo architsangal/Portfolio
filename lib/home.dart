@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -621,67 +623,188 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Container projects() {
     return Container(
-      child: card(),
+      child: card(
+          'portfolio.png',
+          'Portfolio In Flutter',
+          'Primary Developer',
+          "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
+          "link",
+          "link",
+          [
+            'dart',
+            'flutter',
+            'rive',
+          ],
+          true),
     );
   }
 
-  ClipRRect card() {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+  ClipRRect card(String image, String projectName, String role, String text,
+      String github, String link, List<String> skills, bool onGoing) {
+    final height = MediaQuery.of(context).size.height > 980
+        ? MediaQuery.of(context).size.height
+        : 960;
+    final width = MediaQuery.of(context).size.width > 1900
+        ? MediaQuery.of(context).size.width
+        : 1271;
+
+    List<Padding> skillslist = [];
+    for (String skill_i in skills) {
+      skillslist.add(skillused(skill_i));
+    }
     return ClipRRect(
       borderRadius: BorderRadius.circular(40.0),
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: ClipRRect(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: height / 3 * 2),
+        child: Container(
+          height: height / 3 * 2,
+          width: width / 4,
+          margin: const EdgeInsets.all(60.0),
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40.0),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(40.0),
-                  child: FadeInImage.memoryNetwork(
-                      height: 2 / 3 * 5 / 12 * height,
-                      width: width / 3,
-                      fit: BoxFit.fitWidth,
-                      imageScale: 1,
-                      placeholder: kTransparentImage,
-                      image: 'asset/picture.jpg'),
-                ),
-                SelectableText(
-                  "Portfolio|",
-                  style: GoogleFonts.getFont(
-                    'Nanum Gothic',
-                    textStyle: TextStyle(
-                      fontSize: width / 80,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      height: 1,
+            border: Border.all(
+              color: Color.fromARGB(255, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
+              width: width / 350,
+            ),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Color.fromARGB(255, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
+                offset: Offset(1.0, 1.0), //(x,y)
+                blurRadius: 10.0,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(40.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30.0),
+                    child: FadeInImage.memoryNetwork(
+                        height: 5 / 18 * height,
+                        width: width / 3,
+                        fit: BoxFit.cover,
+                        imageScale: 1,
+                        placeholder: kTransparentImage,
+                        image: 'projects_images/' + image),
+                  ),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: 1 / 18 * height),
+                    child: Center(
+                      child: AutoSizeText(
+                        projectName + ' | ' + role,
+                        maxFontSize: 25,
+                        style: GoogleFonts.getFont(
+                          'Nanum Gothic',
+                          textStyle: TextStyle(
+                            fontSize: width / 80,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(
+                                255, 2 * 16 + 7, 6 * 16 + 6, 7 * 16 + 8),
+                            height: 1,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  Spacer(
+                    flex: 1,
+                  ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: 2 / 18 * height),
+                    child: Center(
+                      child: AutoSizeText(
+                        text,
+                        maxFontSize: 20,
+                        style: GoogleFonts.getFont(
+                          'Nanum Gothic',
+                          textStyle: TextStyle(
+                            fontSize: width / 80,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(
+                                255, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
+                            height: 1,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Spacer(
+                    flex: 2,
+                  ),
+                  ConstrainedBox(
+                      constraints: BoxConstraints(minHeight: 1 / 18 * height),
+                      child: Wrap(
+                        children: [
+                          Center(
+                            child: RaisedButton(
+                              onPressed: _launchURL,
+                              child: Text('Show Flutter homepage'),
+                            ),
+                          ),
+                        ],
+                      )),
+                  ConstrainedBox(
+                      constraints: BoxConstraints(minHeight: 1 / 18 * height),
+                      child: Wrap(
+                        children: skillslist,
+                      )),
+                ],
+              ),
             ),
           ),
-        ),
-        height: height / 3 * 2,
-        width: width / 4,
-        margin: const EdgeInsets.all(60.0), //Same as `blurRadius` i guess
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40.0),
-          border: Border.all(
-            color: Color.fromARGB(255, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
-            width: width / 350,
-          ),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Color.fromARGB(255, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
-              offset: Offset(1.0, 1.0), //(x,y)
-              blurRadius: 10.0,
-            ),
-          ],
         ),
       ),
     );
   }
+
+  Padding skillused(String text) {
+    // final height = MediaQuery.of(context).size.height > 939 &&
+    //         MediaQuery.of(context).size.width > 1689
+    //     ? MediaQuery.of(context).size.height
+    //     : 939;
+    final width = MediaQuery.of(context).size.height > 939 &&
+            MediaQuery.of(context).size.width > 1689
+        ? MediaQuery.of(context).size.width
+        : 1639;
+
+    return Padding(
+      padding: const EdgeInsets.all(3),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(width / 60),
+          border: Border.all(
+            color: Colors.black,
+            width: width / 700,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: SelectableText(
+            text,
+            style: GoogleFonts.getFont(
+              'Nanum Gothic',
+              textStyle: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                height: 1,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _launchURL() async => await canLaunch('https://flutter.dev')
+      ? await launch('https://flutter.dev')
+      : throw 'Could not launch ';
 }
