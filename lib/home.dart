@@ -626,9 +626,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       child: Wrap(
         children: [
-          Spacer(
-            flex: 1,
-          ),
           card(
               'portfolio.jpg',
               'Portfolio In Flutter',
@@ -667,12 +664,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 'rive',
               ],
               false),
-          Spacer(
-            flex: 1,
-          ),
-          Spacer(
-            flex: 1,
-          ),
           card(
               'portfolio.jpg',
               'Portfolio In Flutter',
@@ -711,12 +702,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 'rive',
               ],
               false),
-          Spacer(
-            flex: 1,
-          ),
-          Spacer(
-            flex: 1,
-          ),
           card(
               'portfolio.jpg',
               'Portfolio In Flutter',
@@ -755,12 +740,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 'rive',
               ],
               false),
-          Spacer(
-            flex: 1,
-          ),
-          Spacer(
-            flex: 1,
-          ),
           card(
               'portfolio.jpg',
               'Portfolio In Flutter',
@@ -799,9 +778,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 'rive',
               ],
               false),
-          Spacer(
-            flex: 1,
-          ),
         ],
       ),
     );
