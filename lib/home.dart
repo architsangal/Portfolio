@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myportfolio/app_icons.dart';
 import 'package:rive/rive.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -623,24 +624,201 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Container projects() {
     return Container(
-      child: card(
-          'portfolio.png',
-          'Portfolio In Flutter',
-          'Primary Developer',
-          "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
-          "link",
-          "link",
-          [
-            'dart',
-            'flutter',
-            'rive',
-          ],
-          true),
+      child: Wrap(
+        children: [
+          Spacer(
+            flex: 1,
+          ),
+          card(
+              'portfolio.jpg',
+              'Portfolio In Flutter',
+              'Primary Developer',
+              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
+              "link",
+              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
+              [
+                "https://github.com/architsangal/Flutter-Web-Code",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
+                "https://editor.rive.app/file/web/53754",
+                "https://editor.rive.app/file/mobile/53855",
+              ],
+              [
+                "Flutter Code",
+                "Generated JavaScript Code",
+                "Rive Animation Web",
+                "Rive Animation Mobile",
+                "README"
+              ],
+              [
+                1,
+                1,
+                2,
+                2,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              [
+                'dart',
+                'flutter',
+                'rive',
+              ],
+              false),
+          Spacer(
+            flex: 1,
+          ),
+          Spacer(
+            flex: 1,
+          ),
+          card(
+              'portfolio.jpg',
+              'Portfolio In Flutter',
+              'Primary Developer',
+              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
+              "link",
+              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
+              [
+                "https://github.com/architsangal/Flutter-Web-Code",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
+                "https://editor.rive.app/file/web/53754",
+                "https://editor.rive.app/file/mobile/53855",
+              ],
+              [
+                "Flutter Code",
+                "Generated JavaScript Code",
+                "Rive Animation Web",
+                "Rive Animation Mobile",
+                "README"
+              ],
+              [
+                1,
+                1,
+                2,
+                2,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              [
+                'dart',
+                'flutter',
+                'rive',
+              ],
+              false),
+          Spacer(
+            flex: 1,
+          ),
+          Spacer(
+            flex: 1,
+          ),
+          card(
+              'portfolio.jpg',
+              'Portfolio In Flutter',
+              'Primary Developer',
+              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
+              "link",
+              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
+              [
+                "https://github.com/architsangal/Flutter-Web-Code",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
+                "https://editor.rive.app/file/web/53754",
+                "https://editor.rive.app/file/mobile/53855",
+              ],
+              [
+                "Flutter Code",
+                "Generated JavaScript Code",
+                "Rive Animation Web",
+                "Rive Animation Mobile",
+                "README"
+              ],
+              [
+                1,
+                1,
+                2,
+                2,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              [
+                'dart',
+                'flutter',
+                'rive',
+              ],
+              false),
+          Spacer(
+            flex: 1,
+          ),
+          Spacer(
+            flex: 1,
+          ),
+          card(
+              'portfolio.jpg',
+              'Portfolio In Flutter',
+              'Primary Developer',
+              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
+              "link",
+              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
+              [
+                "https://github.com/architsangal/Flutter-Web-Code",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio",
+                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
+                "https://editor.rive.app/file/web/53754",
+                "https://editor.rive.app/file/mobile/53855",
+              ],
+              [
+                "Flutter Code",
+                "Generated JavaScript Code",
+                "Rive Animation Web",
+                "Rive Animation Mobile",
+                "README"
+              ],
+              [
+                1,
+                1,
+                2,
+                2,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              [
+                'dart',
+                'flutter',
+                'rive',
+              ],
+              false),
+          Spacer(
+            flex: 1,
+          ),
+        ],
+      ),
     );
   }
 
-  ClipRRect card(String image, String projectName, String role, String text,
-      String github, String link, List<String> skills, bool onGoing) {
+  ClipRRect card(
+      String image,
+      String projectName,
+      String role,
+      String text,
+      String github,
+      String projectLink,
+      List<String> link,
+      List<String> message,
+      List<int> type,
+      List<String> skills,
+      bool onGoing) {
     final height = MediaQuery.of(context).size.height > 980
         ? MediaQuery.of(context).size.height
         : 960;
@@ -648,16 +826,85 @@ class _MyHomePageState extends State<MyHomePage> {
         ? MediaQuery.of(context).size.width
         : 1271;
 
+    List<Widget> linksList = [];
+    for (int i = 0; i < link.length; i++) {
+      if (type[i] == 1) {
+        linksList.add(Tooltip(
+            message: message[i],
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  enableFeedback: true,
+                  primary: Colors.black,
+                  shape: CircleBorder(),
+                  side: BorderSide(color: Colors.blue)),
+              child: Icon(
+                AppIcons.github,
+              ),
+              onPressed: () {
+                _launchURL(link[i]);
+              },
+            )));
+      } else if (type[i] == 2) {
+        linksList.add(Tooltip(
+            message: message[i],
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  enableFeedback: true,
+                  primary: Colors.black,
+                  shape: CircleBorder(),
+                  side: BorderSide(color: Colors.blue)),
+              child: Icon(
+                Icons.animation,
+              ),
+              onPressed: () {
+                _launchURL(link[i]);
+              },
+            )));
+      } else if (type[i] == 3) {
+        linksList.add(Tooltip(
+            message: message[i],
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  enableFeedback: true,
+                  primary: Colors.black,
+                  shape: CircleBorder(),
+                  side: BorderSide(color: Colors.blue)),
+              child: Icon(
+                Icons.read_more_rounded,
+              ),
+              onPressed: () {
+                _launchURL(link[i]);
+              },
+            )));
+      } else if (type[i] == 4) {
+        linksList.add(Tooltip(
+            message: message[i],
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  enableFeedback: true,
+                  primary: Colors.black,
+                  shape: CircleBorder(),
+                  side: BorderSide(color: Colors.blue)),
+              child: Icon(
+                Icons.article_rounded,
+              ),
+              onPressed: () {
+                _launchURL(link[i]);
+              },
+            )));
+      }
+    }
     List<Padding> skillslist = [];
     for (String skill_i in skills) {
       skillslist.add(skillused(skill_i));
     }
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(40.0),
       child: ConstrainedBox(
         constraints: BoxConstraints(minHeight: height / 3 * 2),
         child: Container(
-          height: height / 3 * 2,
+          height: height / 4 * 3,
           width: width / 4,
           margin: const EdgeInsets.all(60.0),
           decoration: BoxDecoration(
@@ -670,7 +917,7 @@ class _MyHomePageState extends State<MyHomePage> {
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(255, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
-                offset: Offset(1.0, 1.0), //(x,y)
+                offset: Offset(1.0, 1.0),
                 blurRadius: 10.0,
               ),
             ],
@@ -744,11 +991,28 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Wrap(
                         children: [
                           Center(
-                            child: RaisedButton(
-                              onPressed: _launchURL,
-                              child: Text('Show Flutter homepage'),
-                            ),
-                          ),
+                              child: Wrap(
+                            children: linksList,
+                          )),
+                        ],
+                      )),
+                  ConstrainedBox(
+                      constraints: BoxConstraints(minHeight: 1 / 18 * height),
+                      child: Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          TextButton(
+                            child: Text("View Project",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(
+                                      255, 2 * 16 + 7, 6 * 16 + 6, 7 * 16 + 8),
+                                )),
+                            onPressed: () {
+                              _launchURL(projectLink);
+                            },
+                          )
                         ],
                       )),
                   ConstrainedBox(
@@ -756,6 +1020,35 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Wrap(
                         children: skillslist,
                       )),
+
+                  // isssue https://github.com/flutter/flutter/issues/76093
+                  // issue https://github.com/flutter/flutter/issues/79172
+                  // Error Could not find a set of Noto fonts to display all missing characters. Please add a font asset for the missing characters. See: https://flutter.dev/docs/cookbook/design/fonts
+                  // This is due to \u25ce
+                  if (onGoing)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: ConstrainedBox(
+                        constraints:
+                            BoxConstraints(minHeight: 0.5 / 18 * height),
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: AutoSizeText(
+                            "\u25ce In progress",
+                            maxFontSize: 20,
+                            style: GoogleFonts.getFont(
+                              'Nanum Gothic',
+                              textStyle: TextStyle(
+                                fontSize: width / 80,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                                height: 1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),
@@ -804,7 +1097,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _launchURL() async => await canLaunch('https://flutter.dev')
-      ? await launch('https://flutter.dev')
-      : throw 'Could not launch ';
+  void _launchURL(String link) async =>
+      await canLaunch(link) ? await launch(link) : throw 'Could not launch ';
 }
