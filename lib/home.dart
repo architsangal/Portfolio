@@ -173,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       child: FadeInImage.memoryNetwork(
                                           fit: BoxFit.cover,
                                           placeholder: kTransparentImage,
-                                          image: 'asset/aboutme.jpg'),
+                                          image: './asset/aboutme.jpg'),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.all(100.0),
@@ -244,7 +244,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     imageScale: 3,
                                                     placeholder:
                                                         kTransparentImage,
-                                                    image: 'asset/picture.jpg'),
+                                                    image:
+                                                        './asset/picture.jpg'),
                                               ),
                                             ),
                                           ),
@@ -265,7 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: FadeInImage.memoryNetwork(
                                             fit: BoxFit.cover,
                                             placeholder: kTransparentImage,
-                                            image: 'asset/skills.jpg'),
+                                            image: './asset/skills.jpg'),
                                       ),
                                       Container(
                                         height: height * 1.2,
@@ -430,7 +431,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               //         //     repeat: ImageRepeat.repeatY,
                               //         //     fit: BoxFit.fitWidth,
                               //         //     placeholder: kTransparentImage,
-                              //         //     image: 'assets/projects.jpg'),
+                              //         //     image: './assets/projects.jpg'),
                               //       ),
                               //       SizedBox(
                               //         height: height,
@@ -447,7 +448,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: FadeInImage.memoryNetwork(
                                         fit: BoxFit.fitWidth,
                                         placeholder: kTransparentImage,
-                                        image: 'asset/contacts.jpg'),
+                                        image: './asset/contacts.jpg'),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(100.0),
@@ -627,7 +628,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Wrap(
         children: [
           card(
-              'portfolio.jpg',
+              './portfolio.jpg',
               'Portfolio In Flutter',
               'Primary Developer',
               "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
@@ -665,7 +666,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'portfolio.jpg',
+              './portfolio.jpg',
               'Portfolio In Flutter',
               'Primary Developer',
               "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
@@ -703,7 +704,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'portfolio.jpg',
+              './portfolio.jpg',
               'Portfolio In Flutter',
               'Primary Developer',
               "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
@@ -741,7 +742,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'portfolio.jpg',
+              './portfolio.jpg',
               'Portfolio In Flutter',
               'Primary Developer',
               "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
