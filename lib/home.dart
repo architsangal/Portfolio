@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   /// Loads dat afrom a Rive file and initializes playback
   _loadRiveFile() async {
     // Load your Rive data
-    final data = await rootBundle.load('asset/web.riv');
+    final data = await rootBundle.load('assets/animations/web.riv');
     // Create a RiveFile from the binary data
     final file = RiveFile();
     if (file.import(data)) {
@@ -170,10 +170,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   color: Colors.black,
                                   child: Stack(children: [
                                     Center(
-                                      child: FadeInImage.memoryNetwork(
-                                          fit: BoxFit.cover,
-                                          placeholder: kTransparentImage,
-                                          image: './asset/aboutme.jpg'),
+                                      child: FadeInImage(
+                                        fit: BoxFit.cover,
+                                        placeholder:
+                                            MemoryImage(kTransparentImage),
+                                        image: new NetworkImage(
+                                            "https://i.imgur.com/DfC0Rxr.jpg"),
+                                      ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.all(100.0),
@@ -240,12 +243,17 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     width: 5,
                                                   ),
                                                 ),
-                                                child: FadeInImage.memoryNetwork(
-                                                    imageScale: 3,
-                                                    placeholder:
-                                                        kTransparentImage,
-                                                    image:
-                                                        './asset/picture.jpg'),
+                                                child: ConstrainedBox(
+                                                  constraints: BoxConstraints(
+                                                      maxWidth: width / 5,
+                                                      maxHeight: height / 2),
+                                                  child: FadeInImage(
+                                                    placeholder: MemoryImage(
+                                                        kTransparentImage),
+                                                    image: new NetworkImage(
+                                                        "https://i.imgur.com/ihm74EX.jpg"),
+                                                  ),
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -263,10 +271,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Container(
                                         height: height * 1.2,
                                         width: width / 3,
-                                        child: FadeInImage.memoryNetwork(
-                                            fit: BoxFit.cover,
-                                            placeholder: kTransparentImage,
-                                            image: './asset/skills.jpg'),
+                                        child: FadeInImage(
+                                          placeholder:
+                                              MemoryImage(kTransparentImage),
+                                          image: new NetworkImage(
+                                              "https://i.imgur.com/ef4CTzT.jpg"),
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                       Container(
                                         height: height * 1.2,
@@ -415,28 +426,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                               ),
-                              // Idea
-                              // Container(
-                              //     decoration: BoxDecoration(
-                              //       image: DecorationImage(
-                              //         image: AssetImage("asset/projects.jpeg"),
-                              //         fit: BoxFit.cover,
-                              //       ),
-                              //     ),
-                              //     child: Stack(children: [
-                              //       ConstrainedBox(
-                              //         constraints: BoxConstraints(
-                              //             minWidth: width, minHeight: height),
-                              //         // child: FadeInImage.memoryNetwork(
-                              //         //     repeat: ImageRepeat.repeatY,
-                              //         //     fit: BoxFit.fitWidth,
-                              //         //     placeholder: kTransparentImage,
-                              //         //     image: './assets/projects.jpg'),
-                              //       ),
-                              //       SizedBox(
-                              //         height: height,
-                              //       ),
-                              //     ])),
+
                               // Contacts
                               Container(
                                 width: width,
@@ -445,10 +435,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Container(
                                     height: height,
                                     width: width,
-                                    child: FadeInImage.memoryNetwork(
-                                        fit: BoxFit.fitWidth,
-                                        placeholder: kTransparentImage,
-                                        image: './asset/contacts.jpg'),
+                                    child: FadeInImage(
+                                      placeholder:
+                                          MemoryImage(kTransparentImage),
+                                      image: new NetworkImage(
+                                          "https://i.imgur.com/GBDiihc.jpg"),
+                                      fit: BoxFit.fitWidth,
+                                    ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(100.0),
@@ -628,11 +621,10 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Wrap(
         children: [
           card(
-              './portfolio.jpg',
+              'https://i.imgur.com/Vd4nc50.jpg',
               'Portfolio In Flutter',
               'Primary Developer',
               "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
-              "link",
               "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
               [
                 "https://github.com/architsangal/Flutter-Web-Code",
@@ -663,34 +655,46 @@ class _MyHomePageState extends State<MyHomePage> {
                 'dart',
                 'flutter',
                 'rive',
+              ],
+              true),
+          card(
+              'https://i.imgur.com/Jo5UbOK.jpg',
+              'Car Racing 90s',
+              'Primary Developer',
+              "Created this car racing game using Pygame. I enjoyed this game a lot so I recreated this game. This project was one of my early projects. It has one level. Though it can be extended to multi-levels quite easily using python.",
+              "",
+              [
+                "https://github.com/architsangal/Flutter-Web-Code",
+                "https://github.com/architsangal/CAR_RACE-Pygame#car_race-pygame",
+              ],
+              ["Source Code", "README"],
+              [
+                1,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              [
+                'python',
+                'python3',
+                'pygame',
               ],
               false),
           card(
-              './portfolio.jpg',
-              'Portfolio In Flutter',
+              'https://i.imgur.com/Jo5UbOK.jpg',
+              'Car Racing 90s',
               'Primary Developer',
-              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
-              "link",
-              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
+              "Created this car racing game using Pygame. I enjoyed this game a lot so I recreated this game. This project was one of my early projects. It has one level. Though it can be extended to multi-levels quite easily using python.",
+              "",
               [
                 "https://github.com/architsangal/Flutter-Web-Code",
-                "https://github.com/architsangal/Archit_Sangal_Portfolio",
-                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
-                "https://editor.rive.app/file/web/53754",
-                "https://editor.rive.app/file/mobile/53855",
+                "https://github.com/architsangal/CAR_RACE-Pygame#car_race-pygame",
               ],
-              [
-                "Flutter Code",
-                "Generated JavaScript Code",
-                "Rive Animation Web",
-                "Rive Animation Mobile",
-                "README"
-              ],
+              ["Source Code", "README"],
               [
                 1,
-                1,
-                2,
-                2,
                 3,
               ],
               // 1 - github,
@@ -698,85 +702,9 @@ class _MyHomePageState extends State<MyHomePage> {
               // 3 - README
               // 4 - Certification
               [
-                'dart',
-                'flutter',
-                'rive',
-              ],
-              false),
-          card(
-              './portfolio.jpg',
-              'Portfolio In Flutter',
-              'Primary Developer',
-              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
-              "link",
-              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
-              [
-                "https://github.com/architsangal/Flutter-Web-Code",
-                "https://github.com/architsangal/Archit_Sangal_Portfolio",
-                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
-                "https://editor.rive.app/file/web/53754",
-                "https://editor.rive.app/file/mobile/53855",
-              ],
-              [
-                "Flutter Code",
-                "Generated JavaScript Code",
-                "Rive Animation Web",
-                "Rive Animation Mobile",
-                "README"
-              ],
-              [
-                1,
-                1,
-                2,
-                2,
-                3,
-              ],
-              // 1 - github,
-              // 2 - Rive Animation
-              // 3 - README
-              // 4 - Certification
-              [
-                'dart',
-                'flutter',
-                'rive',
-              ],
-              false),
-          card(
-              './portfolio.jpg',
-              'Portfolio In Flutter',
-              'Primary Developer',
-              "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
-              "link",
-              "https://architsangal.github.io/Archit_Sangal_Portfolio/#/",
-              [
-                "https://github.com/architsangal/Flutter-Web-Code",
-                "https://github.com/architsangal/Archit_Sangal_Portfolio",
-                "https://github.com/architsangal/Archit_Sangal_Portfolio#hi-there-",
-                "https://editor.rive.app/file/web/53754",
-                "https://editor.rive.app/file/mobile/53855",
-              ],
-              [
-                "Flutter Code",
-                "Generated JavaScript Code",
-                "Rive Animation Web",
-                "Rive Animation Mobile",
-                "README"
-              ],
-              [
-                1,
-                1,
-                2,
-                2,
-                3,
-              ],
-              // 1 - github,
-              // 2 - Rive Animation
-              // 3 - README
-              // 4 - Certification
-              [
-                'dart',
-                'flutter',
-                'rive',
+                'python',
+                'python3',
+                'pygame',
               ],
               false),
         ],
@@ -789,7 +717,6 @@ class _MyHomePageState extends State<MyHomePage> {
       String projectName,
       String role,
       String text,
-      String github,
       String projectLink,
       List<String> link,
       List<String> message,
@@ -908,13 +835,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30.0),
-                    child: FadeInImage.memoryNetwork(
-                        height: 5 / 18 * height,
-                        width: width / 3,
-                        fit: BoxFit.cover,
-                        imageScale: 1,
-                        placeholder: kTransparentImage,
-                        image: 'projects_images/' + image),
+                    child: FadeInImage(
+                      height: 5 / 18 * height,
+                      width: width / 3,
+                      fit: BoxFit.cover,
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: new NetworkImage(image),
+                    ),
                   ),
                   Spacer(
                     flex: 1,
@@ -973,25 +900,30 @@ class _MyHomePageState extends State<MyHomePage> {
                           )),
                         ],
                       )),
-                  ConstrainedBox(
-                      constraints: BoxConstraints(minHeight: 1 / 18 * height),
-                      child: Wrap(
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          TextButton(
-                            child: Text("View Project",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(
-                                      255, 2 * 16 + 7, 6 * 16 + 6, 7 * 16 + 8),
-                                )),
-                            onPressed: () {
-                              _launchURL(projectLink);
-                            },
-                          )
-                        ],
-                      )),
+                  projectLink.isNotEmpty
+                      ? ConstrainedBox(
+                          constraints:
+                              BoxConstraints(minHeight: 1 / 18 * height),
+                          child: Wrap(
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            children: [
+                              TextButton(
+                                child: Text("View Project",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 2 * 16 + 7,
+                                          6 * 16 + 6, 7 * 16 + 8),
+                                    )),
+                                onPressed: () {
+                                  _launchURL(projectLink);
+                                },
+                              )
+                            ],
+                          ))
+                      : ConstrainedBox(
+                          constraints: BoxConstraints(
+                              minHeight: 1 / 18 * height, maxWidth: 0)),
                   ConstrainedBox(
                       constraints: BoxConstraints(minHeight: 1 / 18 * height),
                       child: Wrap(
