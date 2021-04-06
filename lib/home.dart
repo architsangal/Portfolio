@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             'Hi! I am',
                                             //selectionControls: TextSelectionControls(),
                                             style: GoogleFonts.getFont(
-                                              'Averia Serif Libre',
+                                              'Source Code Pro', //'Averia Serif Libre',
                                               textStyle: TextStyle(
                                                 fontSize: width / 25,
                                                 fontWeight: FontWeight.bold,
@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           SelectableText(
                                             'Archit Sangal',
                                             style: GoogleFonts.getFont(
-                                              'Dancing Script',
+                                              'Source Code Pro', //'Dancing Script',
                                               textStyle: TextStyle(
                                                 fontSize: width / 20,
                                                 fontWeight: FontWeight.bold,
@@ -357,9 +357,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 width: width / 15,
                                               ),
                                               SelectableText(
-                                                '"  I want to make things that inspire\n       and truly make a difference.     "',
+                                                '"I want to make things that inspire and truly make a difference."',
                                                 style: GoogleFonts.getFont(
-                                                  'Nanum Gothic',
+                                                  'Source Code Pro', //'Nanum Gothic',
                                                   textStyle: TextStyle(
                                                     fontSize: width / 40,
                                                     fontWeight: FontWeight.bold,
@@ -599,9 +599,9 @@ class _MyHomePageState extends State<MyHomePage> {
           child: SelectableText(
             text,
             style: GoogleFonts.getFont(
-              'Nanum Gothic',
+              'Source Code Pro', //'Nanum Gothic',
               textStyle: TextStyle(
-                fontSize: width / 80,
+                fontSize: width / 120,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 height: 1,
@@ -957,12 +957,16 @@ class _MyHomePageState extends State<MyHomePage> {
       List<int> type,
       List<String> skills,
       bool onGoing) {
-    final height = MediaQuery.of(context).size.height > 980
-        ? MediaQuery.of(context).size.height
-        : 960;
-    final width = MediaQuery.of(context).size.width > 1900
-        ? MediaQuery.of(context).size.width
-        : 1271;
+    //print(MediaQuery.of(context).size.height.toString() +
+    //    " " +
+    //    MediaQuery.of(context).size.width.toString());
+    final height = 981; //MediaQuery.of(context).size.height > 980
+    //? MediaQuery.of(context).size.height
+    //: 960;
+    final width = 1920;
+    //MediaQuery.of(context).size.width > 1900
+    //    ? MediaQuery.of(context).size.width
+    //    : 1271;
 
     List<Widget> linksList = [];
     for (int i = 0; i < link.length; i++) {
@@ -1118,9 +1122,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: AutoSizeText(
                         projectName + ' | ' + role,
                         textAlign: TextAlign.center,
-                        maxFontSize: 25,
+                        maxFontSize: 21,
                         style: GoogleFonts.getFont(
-                          'Nanum Gothic',
+                          'Source Code Pro', //'Nanum Gothic',
                           textStyle: TextStyle(
                             fontSize: width / 80,
                             fontWeight: FontWeight.bold,
@@ -1140,9 +1144,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Center(
                       child: AutoSizeText(
                         text,
-                        maxFontSize: 20,
+                        maxFontSize: 16,
                         style: GoogleFonts.getFont(
-                          'Nanum Gothic',
+                          'Source Code Pro', //'Nanum Gothic',
                           textStyle: TextStyle(
                             fontSize: width / 80,
                             fontWeight: FontWeight.bold,
@@ -1210,10 +1214,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Align(
                           alignment: Alignment.topRight,
                           child: AutoSizeText(
-                            "\u25ce In progress",
-                            maxFontSize: 20,
+                            " In progress",
+                            maxFontSize: 16,
                             style: GoogleFonts.getFont(
-                              'Nanum Gothic',
+                              'Source Code Pro', //'Nanum Gothic',
                               textStyle: TextStyle(
                                 fontSize: width / 80,
                                 fontWeight: FontWeight.bold,
@@ -1259,9 +1263,9 @@ class _MyHomePageState extends State<MyHomePage> {
           child: SelectableText(
             text,
             style: GoogleFonts.getFont(
-              'Nanum Gothic',
+              'Source Code Pro', //'Nanum Gothic',
               textStyle: TextStyle(
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 height: 1,
