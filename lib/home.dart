@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myportfolio/app_icons.dart';
+import 'package:portfolio/app_icons.dart';
 import 'package:rive/rive.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -170,14 +170,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                   color: Colors.black,
                                   child: Stack(children: [
                                     Center(
-                                      child: FadeInImage(
-                                        fit: BoxFit.cover,
-                                        placeholder:
-                                            MemoryImage(kTransparentImage),
-                                        image: new NetworkImage(
-                                            "https://i.imgur.com/DfC0Rxr.jpg"),
-                                      ),
-                                    ),
+                                        child: FadeInImage(
+                                            fit: BoxFit.cover,
+                                            placeholder:
+                                                MemoryImage(kTransparentImage),
+                                            image: AssetImage(
+                                                'assets/images/aboutme.jpg'))),
                                     Padding(
                                       padding: const EdgeInsets.all(100.0),
                                       child: Row(
@@ -244,16 +242,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   ),
                                                 ),
                                                 child: ConstrainedBox(
-                                                  constraints: BoxConstraints(
-                                                      maxWidth: width / 5,
-                                                      maxHeight: height / 2),
-                                                  child: FadeInImage(
-                                                    placeholder: MemoryImage(
-                                                        kTransparentImage),
-                                                    image: new NetworkImage(
-                                                        "https://i.imgur.com/ihm74EX.jpg"),
-                                                  ),
-                                                ),
+                                                    constraints: BoxConstraints(
+                                                        maxWidth: width / 5,
+                                                        maxHeight: height / 2),
+                                                    child: FadeInImage(
+                                                        fit: BoxFit.cover,
+                                                        placeholder: MemoryImage(
+                                                            kTransparentImage),
+                                                        image: AssetImage(
+                                                            'assets/images/picture.jpg'))),
                                               ),
                                             ),
                                           ),
@@ -274,8 +271,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: FadeInImage(
                                           placeholder:
                                               MemoryImage(kTransparentImage),
-                                          image: new NetworkImage(
-                                              "https://i.imgur.com/ef4CTzT.jpg"),
+                                          image: AssetImage(
+                                              "assets/images/skills.jpg"),
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -438,8 +435,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: FadeInImage(
                                       placeholder:
                                           MemoryImage(kTransparentImage),
-                                      image: new NetworkImage(
-                                          "https://i.imgur.com/GBDiihc.jpg"),
+                                      image: AssetImage(
+                                          "assets/images/contacts.jpg"),
                                       fit: BoxFit.fitWidth,
                                     ),
                                   ),
@@ -621,7 +618,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Wrap(
         children: [
           card(
-              'https://i.imgur.com/Vd4nc50.jpg',
+              'assets/images/1.jpg',
               'Portfolio In Flutter',
               'Primary Developer',
               "This is a flutter project. This is the very project you are looking at right now. It is responsive(still not completely implemented). Animation used for moon and shooting star use rive. It use new scrolling techinques like 'Parallex Effect' and 'zoom out'(still not completely implemented).",
@@ -658,7 +655,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               true),
           card(
-              'https://i.imgur.com/xPAOSJD.jpg',
+              'assets/images/12.jpg',
               'FoodFast',
               'Primary Developer',
               "This is a flutter project for IIITB canteen. Using this app we can order food. Pay it using upi. We can also pay at the time of recieving order. Much attention is paid to it's UI/UX aspect.But it is only made for the users of iiitb. So in order to use it, you must have a iiit outlook address.",
@@ -689,7 +686,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               true),
           card(
-              'https://i.imgur.com/l7diYNb.jpg',
+              'assets/images/7.jpg',
               'IIT Bombay FOSSEE fellowship',
               'Contributor',
               "Under FOSSEE, Indian Institute of Technology, Bombay followship we made Lecture notes on Linear Algebra. It was my first fellowship and was offered to me in my first year (in 2020), under Prof. Prabhu Ramachandran. We use manim for this project(Python -based animation tool). Feel free to check out the lecture notes. Links are given below -",
@@ -732,7 +729,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'https://i.imgur.com/K0xKidW.jpg',
+              'assets/images/8.jpg',
               'Android Flight Booking System',
               'Primary Developer',
               "Entry Project for the official programming and development club of International Institute of Information, Bangalore. It is an upgraded version of C project. This was a fully functional Flight Booking System. It is be used to book, cancel, edit or update imaginary flights booking. After booking or cancelling the tickets, we will recieve a email. This is a native java code.",
@@ -753,28 +750,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ['Android', 'Java', 'API', 'Firebase'],
               false),
           card(
-              'https://i.imgur.com/lgecjGa.jpg',
-              'Air Ticketing System',
-              'Product Manager & Co Developer',
-              "Project was a group project which needed to be implemented in C. It need to perform all the test of an Airline Ticketing System. For example- log-in, booking, searching, cancelling, printing the ticket. Also, from the airline's side, it should be able to add the ticket, etc.",
-              "",
-              [
-                "https://github.com/architsangal/Air-Ticketing-System",
-                "https://github.com/architsangal/Air-Ticketing-System/blob/master/README.pdf",
-              ],
-              ["Source Code", "README"],
-              [
-                1,
-                3,
-              ],
-              // 1 - github,
-              // 2 - Rive Animation
-              // 3 - README
-              // 4 - Certification
-              ['C', 'makefile', 'Adobe Illustrator'],
-              false),
-          card(
-              'https://i.imgur.com/O8DmreA.jpg',
+              'assets/images/11.jpg',
               'Truck On Highway Finding Their Path',
               'Primary Developer',
               "There are a number of stations distributed all over the map. Packages can be shipped from any station to any other station. Stations are connected to Hubs, which are the nodes of a Highway network. Using graphs, shortest path is found.",
@@ -796,28 +772,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ['Java', 'Server Client Interaction', "Applet Java"],
               false),
           card(
-              'https://i.imgur.com/oTJQeAB.png',
-              'COMMAND LINE PATTERN MATCHING PROGRAM',
-              'Co Developer',
-              'Project was a group project which needed to be implemented in Python. It is a Project which deals with making of a customised "UBUNTU TERMINAL COMMAND", changing the "PATH VARIABLE" by making changes to .bashrc, involves the use of ReGex (re module of Python) and os related modules of python',
-              "",
-              [
-                "https://github.com/architsangal/COMMAND-LINE-PATTERN-MATCHING-PROGRAM#run-the-following-commands-and-you-are-ready-for-new-customized-command-on-ubuntu-",
-                "https://github.com/architsangal/COMMAND-LINE-PATTERN-MATCHING-PROGRAM#run-the-following-commands-and-you-are-ready-for-new-customized-command-on-ubuntu-",
-              ],
-              ["Source Code", "README"],
-              [
-                1,
-                3,
-              ],
-              // 1 - github,
-              // 2 - Rive Animation
-              // 3 - README
-              // 4 - Certification
-              ['Python', "ReGex"],
-              false),
-          card(
-              'https://i.imgur.com/lOJjVka.png',
+              'assets/images/4.png',
               'Carrom Cum Air Hockey',
               'Co Developer',
               "This was a project developed in a Hackathon, conducted by zense. It was built on Canvas Development. This Project deals with complex Physics Phenomenon of oblique collision. The code for Collision is a part of complex physics and a lot of projection calculation.",
@@ -841,7 +796,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'https://i.imgur.com/Jx3V96V.jpg',
+              'assets/images/9.jpg',
               'Quiz Game Show',
               'Primary Developer',
               "This is a simple server and client program. There is a host who conducts the show and participants/players who provide answers.",
@@ -868,7 +823,49 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'https://i.imgur.com/XpDeQpA.jpg',
+              'assets/images/5.jpg',
+              'Air Ticketing System',
+              'Product Manager & Co Developer',
+              "Project was a group project which needed to be implemented in C. It need to perform all the test of an Airline Ticketing System. For example- log-in, booking, searching, cancelling, printing the ticket. Also, from the airline's side, it should be able to add the ticket, etc.",
+              "",
+              [
+                "https://github.com/architsangal/Air-Ticketing-System",
+                "https://github.com/architsangal/Air-Ticketing-System/blob/master/README.pdf",
+              ],
+              ["Source Code", "README"],
+              [
+                1,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              ['C', 'makefile', 'Adobe Illustrator'],
+              false),
+          card(
+              'assets/images/6.png',
+              'COMMAND LINE PATTERN MATCHING PROGRAM',
+              'Co Developer',
+              'Project was a group project which needed to be implemented in Python. It is a Project which deals with making of a customised "UBUNTU TERMINAL COMMAND", changing the "PATH VARIABLE" by making changes to .bashrc, involves the use of ReGex (re module of Python) and os related modules of python',
+              "",
+              [
+                "https://github.com/architsangal/COMMAND-LINE-PATTERN-MATCHING-PROGRAM#run-the-following-commands-and-you-are-ready-for-new-customized-command-on-ubuntu-",
+                "https://github.com/architsangal/COMMAND-LINE-PATTERN-MATCHING-PROGRAM#run-the-following-commands-and-you-are-ready-for-new-customized-command-on-ubuntu-",
+              ],
+              ["Source Code", "README"],
+              [
+                1,
+                3,
+              ],
+              // 1 - github,
+              // 2 - Rive Animation
+              // 3 - README
+              // 4 - Certification
+              ['Python', "ReGex"],
+              false),
+          card(
+              'assets/images/10.jpg',
               'Modifying PLY Files',
               'Primary Developer',
               "Used to edit ply files. It used meshlab to check it everything is working or not",
@@ -895,7 +892,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'https://i.imgur.com/mV9lGKL.jpg',
+              'assets/images/3.jpg',
               'Fun Portfolio',
               'Primary Developer',
               "It was a fun project. I start it to get an idea of how HTML,CSS and JAvaScript work. It was one of my initial projects so please don't jugde.",
@@ -920,7 +917,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               false),
           card(
-              'https://i.imgur.com/Jo5UbOK.jpg',
+              'assets/images/2.jpg',
               'Car Racing 90s',
               'Primary Developer',
               "Created this car racing game using Pygame. I enjoyed this game a lot so I recreated this game. This project was one of my early projects. It has one level. Though it can be extended to multi-levels quite easily using python.",
@@ -1109,7 +1106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: width / 3,
                       fit: BoxFit.cover,
                       placeholder: MemoryImage(kTransparentImage),
-                      image: new NetworkImage(image),
+                      image: AssetImage(image),
                     ),
                   ),
                   Spacer(
