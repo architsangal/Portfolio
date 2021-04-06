@@ -6,9 +6,13 @@ Deployment process
 
 -`flutter build web`
 
+-`git add .`
+
+-`git commit -m "Updates"`
+
 -`git push origin main`
 
--`$ flutter pub global activate peanut`
+-`flutter pub global activate peanut`
 
 -`flutter pub global run peanut:peanut`
 
