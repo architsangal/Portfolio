@@ -16,6 +16,51 @@ class Projects {
   void _launchURL(String link) async =>
       await canLaunch(link) ? await launch(link) : throw 'Could not launch ';
 
+  // ignore: non_constant_identifier_names
+  Container widget_container() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 15 * 16 + 6, 15 * 16 + 5, 15 * 16 + 5),
+      ),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+            minWidth: screensize_width, minHeight: 1 * screensize_height),
+        child: Padding(
+          padding: const EdgeInsets.all(40),
+          child: Wrap(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Center(
+                      child: Text(
+                    "My Projects",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.getFont(
+                      'Pacifico',
+                      textStyle: TextStyle(
+                        fontSize: screensize_width / 17,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(
+                            255, 2 * 16 + 7, 6 * 16 + 6, 7 * 16 + 8),
+                      ),
+                    ),
+                  )),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Projects(screensize_height, screensize_width)
+                        .projects(),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   Container projects() {
     return Container(
       child: Wrap(
