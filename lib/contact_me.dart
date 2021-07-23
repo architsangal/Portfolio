@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'app_icons.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/zocial_icons.dart';
-import 'package:firebase/firebase.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // ignore: camel_case_types
 class contact_me {
