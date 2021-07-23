@@ -370,11 +370,13 @@ class contact_me {
                                                       3 * 1 + 4,
                                                       4 * 2 + 7,
                                                       6 * 4 + 14))))),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    String temp = dotenv.env['TEST'];
+                                  },
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
                                     child: new Text(
-                                      "Send",
+                                      "Send" + dotenv.env['TEST'],
                                       style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.pinkAccent[400]),

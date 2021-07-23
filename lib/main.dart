@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/home.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(MyPortfolio());
+Future main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(MyPortfolio());
+}
 
 class MyPortfolio extends StatelessWidget {
   static const MaterialColor dark_blue = const MaterialColor(
