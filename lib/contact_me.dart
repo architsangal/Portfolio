@@ -1,3 +1,6 @@
+import 'dart:convert';
+//import 'package:fluttertoast/fluttertoast.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -5,9 +8,13 @@ import 'package:url_launcher/url_launcher.dart';
 import 'app_icons.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/zocial_icons.dart';
+import 'package:http/http.dart' as http;
 
 // ignore: camel_case_types
 class contact_me {
+  // ignore: non_constant_identifier_names
+  final key_of_form = GlobalKey<FormState>();
+
   final height, width;
 
   final _controllerEmail = TextEditingController();
@@ -16,10 +23,34 @@ class contact_me {
 
   var _controllerMessage = TextEditingController();
 
+  var _controllerSubject = TextEditingController();
+
   contact_me(this.height, this.width);
 
   void _launchURL(String link) async =>
       await canLaunch(link) ? await launch(link) : throw 'Could not launch ';
+
+  Future sendEmail(
+      String name, String email, String subject, String message) async {
+    final serviceID = 'service_oyqa7f9';
+    final templateID = 'template_qhrhijo';
+    final userId = 'user_H0XlWl5d98NbDLWhWCxrb';
+    final url = Uri.parse("https://api.emailjs.com/api/v1.0/email/send");
+    final response = await http.post(url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          "service_id": serviceID,
+          "template_id": templateID,
+          "user_id": userId,
+          "template_params": {
+            "sender_name": name,
+            "sender_email": email,
+            "sender_subject": subject,
+            "sender_message": message,
+          },
+        }));
+    print(response.body);
+  }
 
   // ignore: non_constant_identifier_names
   Container Contact_Me() {
@@ -66,7 +97,7 @@ class contact_me {
                     ),
                   ),
                   SizedBox(
-                    height: height / 10,
+                    height: height / 25,
                     width: width / 10,
                   ),
                   Row(
@@ -196,193 +227,325 @@ class contact_me {
                                   )),
                             ],
                           ),
+                          SizedBox(
+                            height: height / 17,
+                            width: width / 10,
+                          ),
+                          Container(
+                            width: this.width / 3,
+                            child: Text(
+                              "I would love to hear from you! Whether you " +
+                                  "have a question, want to discuss your project" +
+                                  " and ideas, or just for a general chit-chat. Drop me a message here ->",
+                              overflow: TextOverflow.clip,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: this.width / 60,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(
+                                    255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
+                                height: 1,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SelectableText(
-                              "I would love to hear from you! Whether you have a question,\n" +
-                                  " want to discuss your project and ideas or just for a general geeky chit-chat."),
-                          Container(
-                            width: this.width / 3,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: TextFormField(
-                                obscureText: false,
-                                style: TextStyle(
-                                  color: Colors.pinkAccent[400],
-                                ),
-                                controller: _controllerName,
-                                autocorrect: false,
-                                cursorColor: Color.fromARGB(
-                                    255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
-                                cursorHeight: 25,
-                                decoration: InputDecoration(
-                                    hintStyle: TextStyle(
-                                        color: Color.fromARGB(255, 3 * 1 + 4,
-                                            4 * 2 + 7, 6 * 4 + 14),
-                                        fontStyle: FontStyle.italic),
-                                    contentPadding: EdgeInsets.all(15.0),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromARGB(
-                                                255,
-                                                3 * 1 + 4,
-                                                4 * 2 + 7,
-                                                6 * 4 + 14)),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(30))),
-                                    border: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromARGB(
-                                                255,
-                                                3 * 1 + 4,
-                                                4 * 2 + 7,
-                                                6 * 4 + 14)),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(30))),
-                                    labelText:
-                                        'What do you like to call yourself? (Your Name)',
-                                    prefixIcon: Icon(
-                                      Icons.person_outline_rounded,
-                                      color: Color.fromARGB(255, 3 * 1 + 4,
-                                          4 * 2 + 7, 6 * 4 + 14),
-                                    )),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: this.width / 3,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: TextFormField(
-                                keyboardType: TextInputType.emailAddress,
-                                obscureText: false,
-                                style: TextStyle(
-                                  color: Colors.pinkAccent[400],
-                                ),
-                                controller: _controllerEmail,
-                                autocorrect: false,
-                                cursorColor: Color.fromARGB(
-                                    255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
-                                cursorHeight: 25,
-                                decoration: InputDecoration(
-                                    hintStyle: TextStyle(
-                                        color: Color.fromARGB(255, 3 * 1 + 4,
-                                            4 * 2 + 7, 6 * 4 + 14),
-                                        fontStyle: FontStyle.italic),
-                                    contentPadding: EdgeInsets.all(15.0),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromARGB(
-                                                255,
-                                                3 * 1 + 4,
-                                                4 * 2 + 7,
-                                                6 * 4 + 14)),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(30))),
-                                    border: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromARGB(
-                                                255,
-                                                3 * 1 + 4,
-                                                4 * 2 + 7,
-                                                6 * 4 + 14)),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(30))),
-                                    labelText: 'Your Email Address',
-                                    prefixIcon: Icon(
-                                      Icons.mail_outline_rounded,
-                                      color: Color.fromARGB(255, 3 * 1 + 4,
-                                          4 * 2 + 7, 6 * 4 + 14),
-                                    )),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: this.width / 3,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: TextFormField(
-                                minLines: 8,
-                                maxLines: 8,
-                                obscureText: false,
-                                style: TextStyle(
-                                  color: Colors.pinkAccent[400],
-                                ),
-                                controller: _controllerMessage,
-                                autocorrect: false,
-                                cursorColor: Color.fromARGB(
-                                    255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
-                                cursorHeight: 25,
-                                decoration: InputDecoration(
-                                    hintStyle: TextStyle(
-                                        color: Color.fromARGB(255, 3 * 1 + 4,
-                                            4 * 2 + 7, 6 * 4 + 14),
-                                        fontStyle: FontStyle.italic),
-                                    contentPadding: EdgeInsets.all(15.0),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromARGB(
-                                                255,
-                                                3 * 1 + 4,
-                                                4 * 2 + 7,
-                                                6 * 4 + 14)),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                    border: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromARGB(
-                                                255,
-                                                3 * 1 + 4,
-                                                4 * 2 + 7,
-                                                6 * 4 + 14)),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(30))),
-                                    labelText: 'Message',
-                                    prefixIcon: Icon(
-                                      Icons.message,
-                                      color: Color.fromARGB(255, 3 * 1 + 4,
-                                              4 * 2 + 7, 6 * 4 + 14)
-                                          .withOpacity(0),
-                                    )),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            child: Padding(
-                              padding: const EdgeInsets.all(15),
-                              child: ElevatedButton(
-                                  style: ButtonStyle(
-                                      shadowColor: MaterialStateProperty.all<Color>(
-                                          Color.fromARGB(255, 3 * 1 + 4,
-                                              4 * 2 + 7, 6 * 4 + 14)),
-                                      shape: MaterialStateProperty.all<
-                                              RoundedRectangleBorder>(
-                                          RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                              side: BorderSide(
+                          Form(
+                            key: key_of_form,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Container(
+                                  width: this.width / 3,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: TextFormField(
+                                      validator: (text) {
+                                        if (text.isNotEmpty)
+                                          return null;
+                                        else
+                                          return "Field Required";
+                                      },
+                                      obscureText: false,
+                                      style: TextStyle(
+                                        color: Colors.pinkAccent[400],
+                                      ),
+                                      controller: _controllerName,
+                                      autocorrect: false,
+                                      cursorColor: Color.fromARGB(255,
+                                          3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
+                                      cursorHeight: 25,
+                                      decoration: InputDecoration(
+                                          hintStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255,
+                                                  3 * 1 + 4,
+                                                  4 * 2 + 7,
+                                                  6 * 4 + 14),
+                                              fontStyle: FontStyle.italic),
+                                          contentPadding: EdgeInsets.all(15.0),
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
                                                   color: Color.fromARGB(
                                                       255,
                                                       3 * 1 + 4,
                                                       4 * 2 + 7,
-                                                      6 * 4 + 14))))),
-                                  onPressed: () {},
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          border: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          labelText:
+                                              'What do you like to call yourself? (Your Name)',
+                                          prefixIcon: Icon(
+                                            Icons.person_outline_rounded,
+                                            color: Color.fromARGB(
+                                                255,
+                                                3 * 1 + 4,
+                                                4 * 2 + 7,
+                                                6 * 4 + 14),
+                                          )),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: this.width / 3,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.emailAddress,
+                                      obscureText: false,
+                                      style: TextStyle(
+                                        color: Colors.pinkAccent[400],
+                                      ),
+                                      controller: _controllerEmail,
+                                      autocorrect: false,
+                                      cursorColor: Color.fromARGB(255,
+                                          3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
+                                      cursorHeight: 25,
+                                      validator: (text) {
+                                        if (text == null || text.isEmpty) {
+                                          return 'Field Required';
+                                        } else if (EmailValidator.validate(
+                                            text)) {
+                                          return "Enter a valid email address";
+                                        } else
+                                          return null;
+                                      },
+                                      decoration: InputDecoration(
+                                          hintStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255,
+                                                  3 * 1 + 4,
+                                                  4 * 2 + 7,
+                                                  6 * 4 + 14),
+                                              fontStyle: FontStyle.italic),
+                                          contentPadding: EdgeInsets.all(15.0),
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          border: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          labelText: 'Your Email Address',
+                                          prefixIcon: Icon(
+                                            Icons.mail_outline_rounded,
+                                            color: Color.fromARGB(
+                                                255,
+                                                3 * 1 + 4,
+                                                4 * 2 + 7,
+                                                6 * 4 + 14),
+                                          )),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: this.width / 3,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: TextFormField(
+                                      validator: null,
+                                      obscureText: false,
+                                      style: TextStyle(
+                                        color: Colors.pinkAccent[400],
+                                      ),
+                                      controller: _controllerSubject,
+                                      autocorrect: false,
+                                      cursorColor: Color.fromARGB(255,
+                                          3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
+                                      cursorHeight: 25,
+                                      decoration: InputDecoration(
+                                          hintStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255,
+                                                  3 * 1 + 4,
+                                                  4 * 2 + 7,
+                                                  6 * 4 + 14),
+                                              fontStyle: FontStyle.italic),
+                                          contentPadding: EdgeInsets.all(15.0),
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          border: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          labelText: 'Subject',
+                                          prefixIcon: Icon(
+                                            Entypo.pencil,
+                                          )),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: this.width / 3,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: TextFormField(
+                                      validator: (text) {
+                                        if (text.isNotEmpty)
+                                          return null;
+                                        else
+                                          return "Field Required";
+                                      },
+                                      minLines: 8,
+                                      maxLines: 8,
+                                      obscureText: false,
+                                      style: TextStyle(
+                                        color: Colors.pinkAccent[400],
+                                      ),
+                                      controller: _controllerMessage,
+                                      autocorrect: false,
+                                      cursorColor: Color.fromARGB(255,
+                                          3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
+                                      cursorHeight: 25,
+                                      decoration: InputDecoration(
+                                          hintStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255,
+                                                  3 * 1 + 4,
+                                                  4 * 2 + 7,
+                                                  6 * 4 + 14),
+                                              fontStyle: FontStyle.italic),
+                                          contentPadding: EdgeInsets.all(15.0),
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10))),
+                                          border: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255,
+                                                      3 * 1 + 4,
+                                                      4 * 2 + 7,
+                                                      6 * 4 + 14)),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(30))),
+                                          labelText: 'Message',
+                                          prefixIcon: Icon(
+                                            Icons.subject_outlined,
+                                            color: Color.fromARGB(
+                                                255,
+                                                3 * 1 + 4,
+                                                4 * 2 + 7,
+                                                6 * 4 + 14),
+                                          )),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
-                                    child: new Text(
-                                      "Send",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.pinkAccent[400]),
-                                    ),
-                                  )),
+                                    child: ElevatedButton(
+                                        style: ButtonStyle(
+                                            shadowColor:
+                                                MaterialStateProperty.all<Color>(
+                                                    Color.fromARGB(
+                                                        255,
+                                                        3 * 1 + 4,
+                                                        4 * 2 + 7,
+                                                        6 * 4 + 14)),
+                                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                    side: BorderSide(
+                                                        color: Color.fromARGB(
+                                                            255,
+                                                            3 * 1 + 4,
+                                                            4 * 2 + 7,
+                                                            6 * 4 + 14))))),
+                                        onPressed: () {
+                                          // https://stackoverflow.com/questions/40352629/im-unable-to-add-newlines-to-the-emails-content
+                                          if (key_of_form.currentState
+                                              .validate()) {
+                                            sendEmail(
+                                                _controllerName.text,
+                                                _controllerEmail.text,
+                                                _controllerSubject.text,
+                                                _controllerMessage.text
+                                                    .replaceAll("\n", "<br>"));
+                                            _controllerEmail.clear();
+                                            _controllerMessage.clear();
+                                            _controllerName.clear();
+                                            _controllerSubject.clear();
+                                          }
+                                        },
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(15),
+                                          child: new Text(
+                                            "Send",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.pinkAccent[400]),
+                                          ),
+                                        )),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ],
