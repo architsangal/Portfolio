@@ -336,7 +336,7 @@ class contact_me {
                                       validator: (text) {
                                         if (text == null || text.isEmpty) {
                                           return 'Field Required';
-                                        } else if (EmailValidator.validate(
+                                        } else if (!EmailValidator.validate(
                                             text)) {
                                           return "Enter a valid email address";
                                         } else
