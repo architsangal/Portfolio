@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'app_icons.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/zocial_icons.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // ignore: camel_case_types
 class contact_me {
@@ -370,13 +369,11 @@ class contact_me {
                                                       3 * 1 + 4,
                                                       4 * 2 + 7,
                                                       6 * 4 + 14))))),
-                                  onPressed: () {
-                                    String temp = dotenv.env['TEST'];
-                                  },
+                                  onPressed: () {},
                                   child: Padding(
                                     padding: const EdgeInsets.all(15),
                                     child: new Text(
-                                      "Send" + dotenv.env['TEST'],
+                                      "Send",
                                       style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.pinkAccent[400]),
