@@ -25,4 +25,5 @@
 - Add a toast when email is sent.
 - Gramatically check the errors if any in the content
 - Modify and update the content
+- Update the icon on the tab.
 - Divide the section in different tab or have a scroll up or scroll down arrow or navigate arrow. (Needs to be decided).
