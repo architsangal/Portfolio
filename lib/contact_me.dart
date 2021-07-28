@@ -10,8 +10,6 @@ import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/zocial_icons.dart';
 import 'package:http/http.dart' as http;
 import 'package:another_flushbar/flushbar.dart';
-import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:another_flushbar/flushbar_route.dart';
 
 // ignore: camel_case_types
 class contact_me {
