@@ -20,6 +20,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   /// The artboard we'll use to play one of its animations
   Artboard _artboard;
+  final _controller = ScrollController();
 
   @override
   void initState() {
@@ -55,6 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
   // anything under 500kb is ok and anything under 100 kb is perfect
   // np, don't use assets bigger than 1 mb and never that are bigger than 5 mb
 
+  scrollUP() {
+    final double start = 0;
+    if (_controller.hasClients)
+      _controller.animateTo(start,
+          duration: Duration(seconds: 3), curve: Curves.easeInCubic);
+  }
+
   // great resources - Unsplash, Undraw
   @override
   Widget build(BuildContext context) {
@@ -69,6 +77,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           title: Text("Archit Sangal Portfolio"),
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.arrow_upward_rounded,
+            color: Colors.blueAccent[700],
+            size: width / 40,
+          ),
+          backgroundColor: Colors.black,
+          onPressed: scrollUP,
+        ),
         body: Center(
           child: RawScrollbar(
               thumbColor:
@@ -76,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
               radius: Radius.circular(5),
               thickness: 10,
               child: ListView(
+                controller: _controller,
                 children: <Widget>[
                   Stack(
                     children: [
