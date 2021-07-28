@@ -62,121 +62,130 @@ class _MyHomePageState extends State<MyHomePage> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+        appBar: AppBar(
+          leading: Icon(
+            Icons.code,
+            color: Colors.white,
+          ),
+          title: Text("Archit Sangal Portfolio"),
+        ),
         body: Center(
-      child: RawScrollbar(
-          thumbColor: Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
-          radius: Radius.circular(5),
-          thickness: 10,
-          child: ListView(
-            children: <Widget>[
-              Stack(
-                children: [
-                  ConstrainedBox(
-                    constraints:
-                        BoxConstraints(maxHeight: height, maxWidth: width),
-                    child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Stack(
-                          children: [
-                            _artboard != null
-                                ? Rive(
-                                    artboard: _artboard,
-                                    fit: BoxFit.cover,
-                                  )
-                                : Container(),
-                          ],
-                        )),
+          child: RawScrollbar(
+              thumbColor:
+                  Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
+              radius: Radius.circular(5),
+              thickness: 10,
+              child: ListView(
+                children: <Widget>[
+                  Stack(
+                    children: [
+                      ConstrainedBox(
+                        constraints:
+                            BoxConstraints(maxHeight: height, maxWidth: width),
+                        child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Stack(
+                              children: [
+                                _artboard != null
+                                    ? Rive(
+                                        artboard: _artboard,
+                                        fit: BoxFit.cover,
+                                      )
+                                    : Container(),
+                              ],
+                            )),
+                      ),
+                      // sized box
+                      // to give space
+                      // check this out- https://youtu.be/EHPu_DzRfqA
+                      SizedBox(
+                        height: height,
+                        width: width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(100.0),
+                          child: Container(
+                            width: 240.0,
+                            height: 42.0,
+                            alignment: Alignment.centerLeft,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SelectableText(
+                                    'Hi! I am',
+                                    //selectionControls: TextSelectionControls(),
+                                    style: GoogleFonts.getFont(
+                                      'Source Code Pro', //'Averia Serif Libre',
+                                      textStyle: TextStyle(
+                                        fontSize: width / 25,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 219, 216, 227),
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height / 30,
+                                    width: width / 10,
+                                  ),
+                                  SelectableText(
+                                    'Archit Sangal',
+                                    style: GoogleFonts.getFont(
+                                      'Source Code Pro', //'Dancing Script',
+                                      textStyle: TextStyle(
+                                        fontSize: width / 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height / 30,
+                                    width: width / 10,
+                                  ),
+                                  SelectableText(
+                                    'Mobile and Web Developer',
+                                    style: GoogleFonts.getFont(
+                                      'Pacifico',
+                                      textStyle: TextStyle(
+                                        fontSize: width / 50,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.pink,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  // sized box
-                  // to give space
-                  // check this out- https://youtu.be/EHPu_DzRfqA
-                  SizedBox(
-                    height: height,
-                    width: width,
-                    child: Padding(
-                      padding: const EdgeInsets.all(100.0),
-                      child: Container(
-                        width: 240.0,
-                        height: 42.0,
-                        alignment: Alignment.centerLeft,
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SelectableText(
-                                'Hi! I am',
-                                //selectionControls: TextSelectionControls(),
-                                style: GoogleFonts.getFont(
-                                  'Source Code Pro', //'Averia Serif Libre',
-                                  textStyle: TextStyle(
-                                    fontSize: width / 25,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 219, 216, 227),
-                                    height: 1,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: height / 30,
-                                width: width / 10,
-                              ),
-                              SelectableText(
-                                'Archit Sangal',
-                                style: GoogleFonts.getFont(
-                                  'Source Code Pro', //'Dancing Script',
-                                  textStyle: TextStyle(
-                                    fontSize: width / 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    height: 1,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: height / 30,
-                                width: width / 10,
-                              ),
-                              SelectableText(
-                                'Mobile and Web Developer',
-                                style: GoogleFonts.getFont(
-                                  'Pacifico',
-                                  textStyle: TextStyle(
-                                    fontSize: width / 50,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.pink,
-                                    height: 1,
-                                  ),
-                                ),
-                              ),
-                            ]),
+                  about_me(height, width).About_me(),
+                  skills(height, width).Skills(), // projects
+                  Projects(height, width).widget_container(),
+                  contact_me(height, width, context).Contact_Me(),
+                  // copyright
+                  Container(
+                    color: Colors.black,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                          minWidth: width, minHeight: height / 16),
+                      child: Center(
+                        child: Text(
+                          "CopyRight \u00a9 2021 onwards, Archit Sangal. All Rights Reserved.",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: height / 190 + width / 190),
+                        ),
                       ),
                     ),
                   ),
                 ],
-              ),
-              about_me(height, width).About_me(),
-              skills(height, width).Skills(), // projects
-              Projects(height, width).widget_container(),
-              contact_me(height, width, context).Contact_Me(),
-              // copyright
-              Container(
-                color: Colors.black,
-                child: ConstrainedBox(
-                  constraints:
-                      BoxConstraints(minWidth: width, minHeight: height / 16),
-                  child: Center(
-                    child: Text(
-                      "CopyRight \u00a9 2021 onwards, Archit Sangal. All Rights Reserved.",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: height / 190 + width / 190),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          )),
-    ));
+              )),
+        ));
   }
 
   // Notification Bubbling - https://api.flutter.dev/flutter/widgets/NotificationListener-class.html

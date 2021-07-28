@@ -1,11 +1,11 @@
 {
-    "name": "myportfolio",
-    "short_name": "myportfolio",
+    "name": "Archit Sangal Portfolio",
+    "short_name": "Portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "This webpage is the portfolio of Archit Sangal. Student @ IIITB | Fellowship @ Indian Institute of Technology Bombay (FOSSEE Animations) | Developer @ Zense",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

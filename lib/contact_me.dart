@@ -427,6 +427,11 @@ class contact_me {
                                           labelText: 'Subject',
                                           prefixIcon: Icon(
                                             Entypo.pencil,
+                                            color: Color.fromARGB(
+                                                255,
+                                                3 * 1 + 4,
+                                                4 * 2 + 7,
+                                                6 * 4 + 14),
                                           )),
                                     ),
                                   ),

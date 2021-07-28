@@ -25,7 +25,7 @@ class MyPortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Archit Sangal',
+      title: 'Archit Sangal | Portfolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: dark_blue,
