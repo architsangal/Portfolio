@@ -22,7 +22,6 @@
 
 - Add a section of "Download Resume"
 - Add a section of "Download Marksheet"
-- Add a toast when email is sent.
 - Gramatically check the errors if any in the content
 - Modify and update the content
 - Update the icon on the tab.

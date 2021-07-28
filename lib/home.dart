@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
               about_me(height, width).About_me(),
               skills(height, width).Skills(), // projects
               Projects(height, width).widget_container(),
-              contact_me(height, width).Contact_Me(),
+              contact_me(height, width, context).Contact_Me(),
               // copyright
               Container(
                 color: Colors.black,

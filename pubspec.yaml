@@ -34,6 +34,7 @@ dependencies:
   http: ^0.13.3
   fluttertoast: ^8.0.7
   email_validator: '^1.0.6'
+  another_flushbar: ^1.10.24
 
 dev_dependencies:
   flutter_test:

@@ -9,13 +9,16 @@ import 'app_icons.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/zocial_icons.dart';
 import 'package:http/http.dart' as http;
+import 'package:another_flushbar/flushbar.dart';
+import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:another_flushbar/flushbar_route.dart';
 
 // ignore: camel_case_types
 class contact_me {
   // ignore: non_constant_identifier_names
   final key_of_form = GlobalKey<FormState>();
 
-  final height, width;
+  final height, width, context;
 
   final _controllerEmail = TextEditingController();
 
@@ -25,7 +28,7 @@ class contact_me {
 
   var _controllerSubject = TextEditingController();
 
-  contact_me(this.height, this.width);
+  contact_me(this.height, this.width, this.context);
 
   void _launchURL(String link) async =>
       await canLaunch(link) ? await launch(link) : throw 'Could not launch ';
@@ -514,20 +517,32 @@ class contact_me {
                                                             3 * 1 + 4,
                                                             4 * 2 + 7,
                                                             6 * 4 + 14))))),
-                                        onPressed: () {
-                                          // https://stackoverflow.com/questions/40352629/im-unable-to-add-newlines-to-the-emails-content
+                                        onPressed: () async {
                                           if (key_of_form.currentState
                                               .validate()) {
                                             sendEmail(
                                                 _controllerName.text,
                                                 _controllerEmail.text,
                                                 _controllerSubject.text,
-                                                _controllerMessage.text
-                                                    .replaceAll("\n", "<br>"));
+                                                _controllerMessage.text.replaceAll(
+                                                    "\n",
+                                                    "<br>")); // https://stackoverflow.com/questions/40352629/im-unable-to-add-newlines-to-the-emails-content
                                             _controllerEmail.clear();
                                             _controllerMessage.clear();
                                             _controllerName.clear();
                                             _controllerSubject.clear();
+                                            await Flushbar(
+                                              backgroundColor: Colors.black,
+                                              messageText: Text(
+                                                'Message Successfully sent',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.pinkAccent[400],
+                                                  fontSize: width / 50,
+                                                ),
+                                              ),
+                                              duration: Duration(seconds: 3),
+                                            ).show(context);
                                           }
                                         },
                                         child: Padding(
