@@ -50,22 +50,26 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           title: Text("Archit Sangal Portfolio"),
         ),
-        body: Center(
-          child: RawScrollbar(
-              thumbColor:
-                  Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
-              radius: Radius.circular(5),
-              thickness: 10,
-              child: ListView(
-                children: <Widget>[
-                  Welcome(height, width, _artboard).welcome(),
-                  about_me(height, width).About_me(),
-                  skills(height, width).Skills(), // projects
-                  Projects(height, width).widget_container(),
-                  contact_me(height, width, context).Contact_Me(),
-                  CopyRight(height, width).copyright(),
-                ],
-              )),
-        ));
+        body: child(height, width));
+  }
+
+  Center child(var height, var width) {
+    var widgets = <Widget>[
+      Welcome(height, width, _artboard).welcome(),
+      about_me(height, width).About_me(),
+      skills(height, width).Skills(), // projects
+      Projects(height, width).widget_container(),
+      contact_me(height, width, context).Contact_Me(),
+      CopyRight(height, width).copyright(),
+    ];
+    return Center(
+      child: RawScrollbar(
+          thumbColor: Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
+          radius: Radius.circular(5),
+          thickness: 10,
+          child: ListView(
+            children: widgets,
+          )),
+    );
   }
 }
