@@ -20,9 +20,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Artboard _artboard;
+  // ignore: non_constant_identifier_names
+  var controller_of_list;
 
   @override
   void initState() {
+    controller_of_list = ScrollController();
     _loadRiveFile();
     super.initState();
   }
@@ -62,14 +65,21 @@ class _MyHomePageState extends State<MyHomePage> {
       contact_me(height, width, context).Contact_Me(),
       CopyRight(height, width).copyright(),
     ];
+
+    // https://github.com/flutter/flutter/issues/80925#issuecomment-824651754 controller should have same controller
     return Center(
-      child: RawScrollbar(
-          thumbColor: Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
-          radius: Radius.circular(5),
-          thickness: 10,
-          child: ListView(
-            children: widgets,
-          )),
-    );
+        child: RawScrollbar(
+            controller: controller_of_list,
+            thumbColor:
+                Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
+            radius: Radius.circular(5),
+            thickness: 10,
+            child: ListView.builder(
+              controller: controller_of_list,
+              itemCount: widgets.length,
+              itemBuilder: (context, index) {
+                return widgets[index];
+              },
+            )));
   }
 }
