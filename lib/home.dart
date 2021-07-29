@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:portfolio/about_me.dart';
-import 'package:portfolio/welcome.dart';
 import 'package:rive/rive.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'Projects.dart';
 import 'about_me.dart';
 import 'contact_me.dart';
@@ -20,7 +20,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   /// The artboard we'll use to play one of its animations
   Artboard _artboard;
-  final _controller = ScrollController();
 
   @override
   void initState() {
@@ -56,13 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
   // anything under 500kb is ok and anything under 100 kb is perfect
   // np, don't use assets bigger than 1 mb and never that are bigger than 5 mb
 
-  scrollUP() {
-    final double start = 0;
-    if (_controller.hasClients)
-      _controller.animateTo(start,
-          duration: Duration(seconds: 3), curve: Curves.easeInCubic);
-  }
-
   // great resources - Unsplash, Undraw
   @override
   Widget build(BuildContext context) {
@@ -77,15 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           title: Text("Archit Sangal Portfolio"),
         ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(
-            Icons.arrow_upward_rounded,
-            color: Colors.blueAccent[700],
-            size: width / 40,
-          ),
-          backgroundColor: Colors.black,
-          onPressed: scrollUP,
-        ),
         body: Center(
           child: RawScrollbar(
               thumbColor:
@@ -93,9 +76,93 @@ class _MyHomePageState extends State<MyHomePage> {
               radius: Radius.circular(5),
               thickness: 10,
               child: ListView(
-                controller: _controller,
                 children: <Widget>[
-                  welcome(_artboard, height, width).Welcome(),
+                  Stack(
+                    children: [
+                      ConstrainedBox(
+                        constraints:
+                            BoxConstraints(maxHeight: height, maxWidth: width),
+                        child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Stack(
+                              children: [
+                                _artboard != null
+                                    ? Rive(
+                                        artboard: _artboard,
+                                        fit: BoxFit.cover,
+                                      )
+                                    : Container(),
+                              ],
+                            )),
+                      ),
+                      // sized box
+                      // to give space
+                      // check this out- https://youtu.be/EHPu_DzRfqA
+                      SizedBox(
+                        height: height,
+                        width: width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(100.0),
+                          child: Container(
+                            width: 240.0,
+                            height: 42.0,
+                            alignment: Alignment.centerLeft,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SelectableText(
+                                    'Hi! I am',
+                                    //selectionControls: TextSelectionControls(),
+                                    style: GoogleFonts.getFont(
+                                      'Source Code Pro', //'Averia Serif Libre',
+                                      textStyle: TextStyle(
+                                        fontSize: width / 25,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 219, 216, 227),
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height / 30,
+                                    width: width / 10,
+                                  ),
+                                  SelectableText(
+                                    'Archit Sangal',
+                                    style: GoogleFonts.getFont(
+                                      'Source Code Pro', //'Dancing Script',
+                                      textStyle: TextStyle(
+                                        fontSize: width / 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height / 30,
+                                    width: width / 10,
+                                  ),
+                                  SelectableText(
+                                    'Mobile and Web Developer',
+                                    style: GoogleFonts.getFont(
+                                      'Pacifico',
+                                      textStyle: TextStyle(
+                                        fontSize: width / 50,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.pink,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   about_me(height, width).About_me(),
                   skills(height, width).Skills(), // projects
                   Projects(height, width).widget_container(),
