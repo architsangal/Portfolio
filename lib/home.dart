@@ -21,13 +21,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Artboard _artboard;
   // ignore: non_constant_identifier_names
-  var controller_of_list;
+  ScrollController controller_of_list;
+  Welcome welcome;
+  about_me aboutme;
+  skills skill;
+  Projects projects;
+  contact_me contactme;
+  CopyRight copyright;
 
   @override
   void initState() {
     controller_of_list = ScrollController();
     _loadRiveFile();
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => {});
   }
 
   _loadRiveFile() async {
@@ -47,6 +54,96 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
         appBar: AppBar(
+          actions: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+            TextButton(
+              onPressed: () {
+                controller_of_list.animateTo(height,
+                    duration: Duration(milliseconds: 2000),
+                    curve: Curves.easeInOutCubic);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "ABOUT",
+                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+            TextButton(
+              onPressed: () {
+                controller_of_list.animateTo(2.2 * height, //(1+1.2)
+                    duration: Duration(milliseconds: 2000),
+                    curve: Curves.easeInOutCubic);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "SKILLS",
+                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+            TextButton(
+              onPressed: () {
+                controller_of_list.animateTo(3.3 * height, //(1+1.2+1.1)
+                    duration: Duration(milliseconds: 2000),
+                    curve: Curves.easeInOutCubic);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "EDUCATION",
+                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+            TextButton(
+              onPressed: () {
+                controller_of_list.animateTo(4.3 * height, //(1+1.2+1.1+1)
+                    duration: Duration(milliseconds: 2000),
+                    curve: Curves.easeInOutCubic);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "PROJECTS",
+                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+            TextButton(
+              onPressed: () {
+                controller_of_list.animateTo(1000000,
+                    duration: Duration(milliseconds: 2000),
+                    curve: Curves.easeInOutCubic);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "GET IN TOUCH",
+                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+          ],
           leading: Icon(
             Icons.code,
             color: Colors.white,
@@ -57,13 +154,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Center child(var height, var width) {
+    this.welcome = Welcome(height, width, _artboard);
+    this.aboutme = about_me(height, width);
+    this.skill = skills(height, width);
+    this.projects = Projects(height, width);
+    this.contactme = contact_me(height, width, context);
+    this.copyright = CopyRight(height, width);
     var widgets = <Widget>[
-      Welcome(height, width, _artboard).welcome(),
-      about_me(height, width).About_me(),
-      skills(height, width).Skills(), // projects
-      Projects(height, width).widget_container(),
-      contact_me(height, width, context).Contact_Me(),
-      CopyRight(height, width).copyright(),
+      this.welcome.welcome(),
+      this.aboutme.About_me(),
+      this.skill.Skills(), // projects
+      this.projects.widget_container(),
+      this.contactme.Contact_Me(),
+      this.copyright.copyright(),
     ];
 
     // https://github.com/flutter/flutter/issues/80925#issuecomment-824651754 controller should have same controller
@@ -74,12 +177,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
             radius: Radius.circular(5),
             thickness: 10,
-            child: ListView.builder(
+            child: ListView(
               controller: controller_of_list,
-              itemCount: widgets.length,
-              itemBuilder: (context, index) {
-                return widgets[index];
-              },
+              children: widgets,
             )));
   }
 }

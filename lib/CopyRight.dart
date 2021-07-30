@@ -6,15 +6,13 @@ class CopyRight {
   CopyRight(this.height, this.width);
   Container copyright() {
     return Container(
+      height: height / 20,
       color: Colors.black,
-      child: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: width, minHeight: height / 16),
-        child: Center(
-          child: Text(
-            "CopyRight \u00a9 2021 onwards, Archit Sangal. All Rights Reserved.",
-            style: TextStyle(
-                color: Colors.white, fontSize: height / 190 + width / 190),
-          ),
+      child: Center(
+        child: Text(
+          "CopyRight \u00a9 2021 onwards, Archit Sangal. All Rights Reserved.",
+          style: TextStyle(
+              color: Colors.white, fontSize: height / 190 + width / 190),
         ),
       ),
     );

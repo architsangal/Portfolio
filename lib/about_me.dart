@@ -5,7 +5,6 @@ import 'package:transparent_image/transparent_image.dart';
 // ignore: camel_case_types
 class about_me {
   final height, width;
-
   about_me(this.height, this.width);
 
   // ignore: non_constant_identifier_names
