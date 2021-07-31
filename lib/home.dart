@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:portfolio/CopyRight.dart';
+import 'package:portfolio/Education.dart';
 import 'package:portfolio/Welcome.dart';
 import 'package:portfolio/about_me.dart';
 import 'package:rive/rive.dart';
@@ -28,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Projects projects;
   contact_me contactme;
   CopyRight copyright;
+  Education education;
 
   @override
   void initState() {
@@ -128,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               onPressed: () {
-                controller_of_list.animateTo(1000000,
+                controller_of_list.animateTo(5.3 * height,
                     duration: Duration(milliseconds: 2000),
                     curve: Curves.easeInOutCubic);
               },
@@ -160,11 +162,13 @@ class _MyHomePageState extends State<MyHomePage> {
     this.projects = Projects(height, width);
     this.contactme = contact_me(height, width, context);
     this.copyright = CopyRight(height, width);
+    this.education = Education(height, width);
     var widgets = <Widget>[
       this.welcome.welcome(),
       this.aboutme.About_me(),
-      this.skill.Skills(), // projects
-      this.projects.widget_container(),
+      this.skill.Skills(),
+      this.education.education(),
+      this.projects.widget_container(), // projects
       this.contactme.Contact_Me(),
       this.copyright.copyright(),
     ];
