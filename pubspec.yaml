@@ -29,12 +29,12 @@ dependencies:
   google_fonts: ^2.0.0
   transparent_image: ^2.0.0
   auto_size_text: ^2.1.0
-  url_launcher: ^6.0.3
   fluttericon: ^2.0.0
   http: ^0.13.3
   fluttertoast: ^8.0.7
   email_validator: '^1.0.6'
   another_flushbar: ^1.10.24
+  url_launcher: ^6.0.9
 
 dev_dependencies:
   flutter_test:

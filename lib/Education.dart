@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: camel_case_types
 class Education {
   final height, width;
   Education(this.height, this.width);
+
+  void _launchURL(_url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : throw 'Could not launch $_url';
 
   // ignore: non_constant_identifier_names
   Container education() {
@@ -74,7 +79,10 @@ class Education {
                             side: BorderSide(
                                 color: Color.fromARGB(
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
-                onPressed: () async {},
+                onPressed: () async {
+                  _launchURL(
+                      "https://drive.google.com/file/d/1qDHH1M1fGM64uK0jsfqW0r883mIj-LPk/view?usp=sharing");
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(15),
                   child: new Text(
