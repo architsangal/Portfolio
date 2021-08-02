@@ -45,17 +45,21 @@ class Education {
                   ),
                 ),
                 SizedBox(
-                  height: height / 20,
+                  height: height / 40,
                   width: width / 10,
                 ),
                 educationField(
-                    "International Institute of Information Technology Bangalore, Bangalore",
-                    "Integrated M.Tech. in Computer Science (2019 - 2024)"),
+                    "International Institute of Information Technology Bangalore",
+                    "Integrated M.Tech. in Computer Science (2019 - 2024)",
+                    "CGPA: 3.53/4"),
                 educationField(
                     "Gautam International Senior Secondary School, Dehradun",
-                    "Higher Secondary Education (2016 - 2018)"),
-                educationField("Ann Mary School, Dehradun",
-                    "Secondary School Education (2011 - 2016)"),
+                    "Higher Secondary Education (2016 - 2018)",
+                    "Percentage: 90.8%"),
+                educationField(
+                    "Ann Mary School, Dehradun",
+                    "Secondary School Education (2011 - 2016)",
+                    "Percentage: 94.2%"),
                 Center(
                   child: download(),
                 )
@@ -93,9 +97,9 @@ class Education {
                 ))));
   }
 
-  Padding educationField(String heading, String text) {
+  Padding educationField(String heading, String text, additionalText) {
     return Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: Container(
             width: width / 8 * 5,
             decoration: BoxDecoration(
@@ -121,6 +125,34 @@ class Education {
                     ),
                     Row(
                       children: [
+                        // SelectableText(
+                        //   "• ",
+                        //   style: GoogleFonts.getFont(
+                        //     'Source Code Pro',
+                        //     textStyle: TextStyle(
+                        //       fontSize: width / 100,
+                        //       fontWeight: FontWeight.bold,
+                        //       color: Colors.white,
+                        //       height: 1.5,
+                        //     ),
+                        //   ),
+                        // ),
+                        SelectableText(
+                          text,
+                          style: GoogleFonts.getFont(
+                            'Source Code Pro',
+                            textStyle: TextStyle(
+                              fontSize: width / 90,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.pink,
+                              height: 1.5,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
                         SelectableText(
                           "• ",
                           style: GoogleFonts.getFont(
@@ -134,7 +166,7 @@ class Education {
                           ),
                         ),
                         SelectableText(
-                          text,
+                          additionalText,
                           style: GoogleFonts.getFont(
                             'Source Code Pro',
                             textStyle: TextStyle(

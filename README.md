@@ -25,4 +25,3 @@
 - Gramatically check the errors if any in the content
 - Modify and update the content
 - decrease the size of images of skills and education
-- Add a raw scrollbar to projects
