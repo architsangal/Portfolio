@@ -5,6 +5,7 @@ import 'package:portfolio/Education.dart';
 import 'package:portfolio/Welcome.dart';
 import 'package:portfolio/about_me.dart';
 import 'package:rive/rive.dart';
+import 'Experience.dart';
 import 'Projects.dart';
 import 'about_me.dart';
 import 'contact_me.dart';
@@ -20,6 +21,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final keyWelcome = GlobalKey();
   Artboard _artboard;
   // ignore: non_constant_identifier_names
   ScrollController controller_of_list;
@@ -30,6 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   contact_me contactme;
   CopyRight copyright;
   Education education;
+  Experience experience;
 
   @override
   void initState() {
@@ -79,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               onPressed: () {
+                //Scrollable.ensureVisible(keyWelcome.currentContext);
                 controller_of_list.animateTo(2.2 * height, //(1+1.2)
                     duration: Duration(milliseconds: 2000),
                     curve: Curves.easeInOutCubic);
@@ -113,7 +117,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               onPressed: () {
-                controller_of_list.animateTo(4.3 * height, //(1+1.2+1.1+1)
+                controller_of_list.animateTo(4.3 * height, //(1+1.2+1.1)
+                    duration: Duration(milliseconds: 2000),
+                    curve: Curves.easeInOutCubic);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "EXPERIENCE",
+                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.06,
+            ),
+            TextButton(
+              onPressed: () {
+                controller_of_list.animateTo(5.3 * height, //(1+1.2+1.1+1)
                     duration: Duration(milliseconds: 2000),
                     curve: Curves.easeInOutCubic);
               },
@@ -130,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               onPressed: () {
-                controller_of_list.animateTo(5.3 * height,
+                controller_of_list.animateTo(6.8 * height,
                     duration: Duration(milliseconds: 2000),
                     curve: Curves.easeInOutCubic);
               },
@@ -163,11 +184,13 @@ class _MyHomePageState extends State<MyHomePage> {
     this.contactme = contact_me(height, width, context);
     this.copyright = CopyRight(height, width);
     this.education = Education(height, width);
+    this.experience = Experience(height, width);
     var widgets = <Widget>[
       this.welcome.welcome(),
       this.aboutme.About_me(),
       this.skill.Skills(),
       this.education.education(),
+      this.experience.experience(),
       this.projects.widget_container(), // projects
       this.contactme.Contact_Me(),
       this.copyright.copyright(),

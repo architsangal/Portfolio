@@ -19,6 +19,7 @@ class Projects {
   // ignore: non_constant_identifier_names
   Container widget_container() {
     return Container(
+      height: screensize_height * 1.5,
       decoration: BoxDecoration(
         color: Color.fromARGB(255, 15 * 16 + 6, 15 * 16 + 5, 15 * 16 + 5),
       ),

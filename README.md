@@ -20,9 +20,7 @@
 
 ## Features that need to be added
 
-- Add a section of "Download Resume"
-- Add a section of "Experiance"
-- Check before Scrolling
+- Check before Scrolling (Not required right now) - refer to https://stackoverflow.com/a/49154882/13279920
 - add sized box so that everything is visible
 - Gramatically check the errors if any in the content
 - Modify and update the content

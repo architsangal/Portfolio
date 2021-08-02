@@ -120,11 +120,11 @@ class Welcome {
                           side: BorderSide(color: Colors.pinkAccent[400])))),
               onPressed: () async {
                 _launchURL(
-                    "https://drive.google.com/file/d/1qDHH1M1fGM64uK0jsfqW0r883mIj-LPk/view?usp=sharing");
+                    "https://drive.google.com/file/d/1I02XX0ten78qREk5O3stbqJikW3pRvv9/view?usp=sharing");
               },
               child: Padding(
                 padding: const EdgeInsets.all(15),
-                child: SelectableText(
+                child: Text(
                   "Download Resume",
                   style: GoogleFonts.getFont(
                     'Pacifico',
