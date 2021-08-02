@@ -22,6 +22,7 @@
 
 - Add a section of "Download Resume"
 - Add a section of "Experiance"
+- Check before Scrolling
+- add sized box so that everything is visible
 - Gramatically check the errors if any in the content
 - Modify and update the content
-- decrease the size of images of skills and education

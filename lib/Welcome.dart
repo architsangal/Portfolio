@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Welcome {
   var height, width, _artboard;
@@ -85,11 +86,56 @@ class Welcome {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: height / 5,
+                      width: width / 10,
+                    ),
+                    download(),
                   ]),
             ),
           ),
         ),
       ],
     );
+  }
+
+  void _launchURL(_url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : throw 'Could not launch $_url';
+
+  Container download() {
+    return Container(
+        alignment: Alignment.bottomRight,
+        child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.pinkAccent[400]),
+                  shadowColor:
+                      MaterialStateProperty.all<Color>(Colors.pinkAccent[400]),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                          side: BorderSide(color: Colors.pinkAccent[400])))),
+              onPressed: () async {
+                _launchURL(
+                    "https://drive.google.com/file/d/1qDHH1M1fGM64uK0jsfqW0r883mIj-LPk/view?usp=sharing");
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(15),
+                child: SelectableText(
+                  "Download Resume",
+                  style: GoogleFonts.getFont(
+                    'Pacifico',
+                    textStyle: TextStyle(
+                      fontSize: width / 60,
+                      color: Colors.white,
+                      height: 1,
+                    ),
+                  ),
+                ),
+              ),
+            )));
   }
 }
