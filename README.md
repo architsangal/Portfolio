@@ -21,7 +21,8 @@
 ## Features that need to be added
 
 - Add a section of "Download Resume"
-- Add a section of "Download Marksheet"
+- Add a section of "Experiance"
 - Gramatically check the errors if any in the content
 - Modify and update the content
-- Divide the section in different tab or have a scroll up or scroll down arrow or navigate arrow. (Needs to be decided).
+- decrease the size of images of skills and education
+- Add a raw scrollbar to projects
