@@ -66,11 +66,11 @@ class contact_me {
           child: FadeInImage(
             placeholder: MemoryImage(kTransparentImage),
             image: AssetImage("assets/images/contacts.jpg"),
-            fit: BoxFit.fitWidth,
+            fit: BoxFit.cover,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(100.0),
+          padding: const EdgeInsets.all(10.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 100),

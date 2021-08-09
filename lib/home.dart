@@ -57,123 +57,124 @@ class _MyHomePageState extends State<MyHomePage> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-        appBar: AppBar(
-          actions: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-            TextButton(
-              onPressed: () {
-                controller_of_list.animateTo(height,
-                    duration: Duration(milliseconds: 2000),
-                    curve: Curves.easeInOutCubic);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "ABOUT",
-                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+    return SafeArea(
+        child: Scaffold(
+            appBar: AppBar(
+              actions: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
                 ),
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-            TextButton(
-              onPressed: () {
-                //Scrollable.ensureVisible(keyWelcome.currentContext);
-                controller_of_list.animateTo(2.2 * height, //(1+1.2)
-                    duration: Duration(milliseconds: 2000),
-                    curve: Curves.easeInOutCubic);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "SKILLS",
-                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                TextButton(
+                  onPressed: () {
+                    controller_of_list.animateTo(height,
+                        duration: Duration(milliseconds: 2000),
+                        curve: Curves.easeInOutCubic);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "ABOUT",
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-            TextButton(
-              onPressed: () {
-                controller_of_list.animateTo(3.3 * height, //(1+1.2+1.1)
-                    duration: Duration(milliseconds: 2000),
-                    curve: Curves.easeInOutCubic);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "EDUCATION",
-                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
                 ),
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-            TextButton(
-              onPressed: () {
-                controller_of_list.animateTo(4.3 * height, //(1+1.2+1.1)
-                    duration: Duration(milliseconds: 2000),
-                    curve: Curves.easeInOutCubic);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "EXPERIENCE",
-                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                TextButton(
+                  onPressed: () {
+                    //Scrollable.ensureVisible(keyWelcome.currentContext);
+                    controller_of_list.animateTo(2.2 * height, //(1+1.2)
+                        duration: Duration(milliseconds: 2000),
+                        curve: Curves.easeInOutCubic);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "SKILLS",
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-            TextButton(
-              onPressed: () {
-                controller_of_list.animateTo(5.3 * height, //(1+1.2+1.1+1)
-                    duration: Duration(milliseconds: 2000),
-                    curve: Curves.easeInOutCubic);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "PROJECTS",
-                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
                 ),
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-            TextButton(
-              onPressed: () {
-                controller_of_list.animateTo(6.8 * height,
-                    duration: Duration(milliseconds: 2000),
-                    curve: Curves.easeInOutCubic);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "GET IN TOUCH",
-                  style: TextStyle(fontSize: 15.0, color: Colors.white),
+                TextButton(
+                  onPressed: () {
+                    controller_of_list.animateTo(3.3 * height, //(1+1.2+1.1)
+                        duration: Duration(milliseconds: 2000),
+                        curve: Curves.easeInOutCubic);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "EDUCATION",
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
+                  ),
                 ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
+                ),
+                TextButton(
+                  onPressed: () {
+                    controller_of_list.animateTo(4.3 * height, //(1+1.2+1.1)
+                        duration: Duration(milliseconds: 2000),
+                        curve: Curves.easeInOutCubic);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "EXPERIENCE",
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
+                ),
+                TextButton(
+                  onPressed: () {
+                    controller_of_list.animateTo(5.3 * height, //(1+1.2+1.1+1)
+                        duration: Duration(milliseconds: 2000),
+                        curve: Curves.easeInOutCubic);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "PROJECTS",
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
+                ),
+                TextButton(
+                  onPressed: () {
+                    controller_of_list.animateTo(6.8 * height,
+                        duration: Duration(milliseconds: 2000),
+                        curve: Curves.easeInOutCubic);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "GET IN TOUCH",
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.06,
+                ),
+              ],
+              leading: Icon(
+                Icons.code,
+                color: Colors.white,
               ),
+              title: Text("Archit Sangal Portfolio"),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.06,
-            ),
-          ],
-          leading: Icon(
-            Icons.code,
-            color: Colors.white,
-          ),
-          title: Text("Archit Sangal Portfolio"),
-        ),
-        body: child(height, width));
+            body: child(height, width)));
   }
 
   Center child(var height, var width) {
