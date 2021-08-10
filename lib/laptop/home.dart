@@ -5,16 +5,35 @@ import 'package:portfolio/laptop/Education.dart';
 import 'package:portfolio/laptop/Welcome.dart';
 import 'package:portfolio/laptop/about_me.dart';
 import 'package:rive/rive.dart';
-import 'laptop/Experience.dart';
-import 'laptop/Projects.dart';
-import 'laptop/about_me.dart';
-import 'laptop/contact_me.dart';
-import 'laptop/skills.dart';
+import 'Experience.dart';
+import 'Projects.dart';
+import 'about_me.dart';
+import 'contact_me.dart';
+import 'skills.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
+
+  static double widthCalc(BuildContext context) {
+    MediaQueryData queryData = MediaQuery.of(context);
+    return queryData.size.width;
+  }
+
+  static double heightCalc(BuildContext context) {
+    MediaQueryData queryData = MediaQuery.of(context);
+    return queryData.size.height;
+  }
+
+  static double orientation(BuildContext context) {
+    if (widthCalc(context) > heightCalc(context)) {
+      return 0;
+    } else {
+      return 1;
+    }
+    // 0 means landscape and 1 means portrait
+  }
 
   @override
   _MyHomePageState createState() => _MyHomePageState();

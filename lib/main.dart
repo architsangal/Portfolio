@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/home.dart';
+import 'package:portfolio/laptop/home.dart';
+import 'package:portfolio/responsive.dart';
 
 void main() async {
   runApp(MyPortfolio());
@@ -24,6 +25,29 @@ class MyPortfolio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print(MyHomePage.widthCalc(context));
+    // print(MyHomePage.heightCalc(context));
+    // if (widthCalc(context) >= 320 && widthCalc(context) <= 640) {
+    //   return MaterialApp(
+    //     title: 'Archit Sangal | Portfolio',
+    //     debugShowCheckedModeBanner: false,
+    //     theme: ThemeData(
+    //       scaffoldBackgroundColor: dark_blue,
+    //       primarySwatch: dark_blue,
+    //     ),
+    //     home: MyHomePage(title: 'Portfolio'),
+    //   );
+    // } else if (widthCalc(context) >= 320 && widthCalc(context) <= 640) {
+    //   return MaterialApp(
+    //     title: 'Archit Sangal | Portfolio',
+    //     debugShowCheckedModeBanner: false,
+    //     theme: ThemeData(
+    //       scaffoldBackgroundColor: dark_blue,
+    //       primarySwatch: dark_blue,
+    //     ),
+    //     home: MyHomePage(title: 'Portfolio'),
+    //   );
+    // } else {
     return MaterialApp(
       title: 'Archit Sangal | Portfolio',
       debugShowCheckedModeBanner: false,
@@ -31,7 +55,8 @@ class MyPortfolio extends StatelessWidget {
         scaffoldBackgroundColor: dark_blue,
         primarySwatch: dark_blue,
       ),
-      home: MyHomePage(title: 'Portfolio'),
+      home: Responsive(),
     );
+    // }
   }
 }
