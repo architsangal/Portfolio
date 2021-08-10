@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:portfolio/CopyRight.dart';
-import 'package:portfolio/Education.dart';
-import 'package:portfolio/Welcome.dart';
-import 'package:portfolio/about_me.dart';
+import 'package:portfolio/laptop/CopyRight.dart';
+import 'package:portfolio/laptop/Education.dart';
+import 'package:portfolio/laptop/Welcome.dart';
+import 'package:portfolio/laptop/about_me.dart';
 import 'package:rive/rive.dart';
-import 'Experience.dart';
-import 'Projects.dart';
-import 'about_me.dart';
-import 'contact_me.dart';
-import 'skills.dart';
+import 'laptop/Experience.dart';
+import 'laptop/Projects.dart';
+import 'laptop/about_me.dart';
+import 'laptop/contact_me.dart';
+import 'laptop/skills.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);

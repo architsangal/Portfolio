@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'app_icons.dart';
+import '../app_icons.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/zocial_icons.dart';
 import 'package:http/http.dart' as http;
