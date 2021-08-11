@@ -20,49 +20,65 @@ class Education {
         color: Colors.black,
         child: Stack(children: [
           Container(
-              height: height,
-              width: width,
-              child: FadeInImage(
-                  fit: BoxFit.cover,
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage('assets/images/education.jpg'))),
+            height: height,
+            width: width,
+            child: FadeInImage(
+                fit: BoxFit.cover,
+                placeholder: MemoryImage(kTransparentImage),
+                image: AssetImage('assets/images/education.jpg')),
+          ),
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Spacer(
+                  flex: 1,
+                ),
                 SelectableText(
                   'Education',
                   style: GoogleFonts.getFont(
                     'Pacifico',
                     textStyle: TextStyle(
-                      fontSize: width / 20,
+                      fontSize: width / 10,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      height: 1,
+                      height: 2,
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: height / 40,
-                  width: width / 10,
+                Spacer(
+                  flex: 1,
                 ),
-                educationField(
-                    "International Institute of Information Technology Bangalore",
-                    "Integrated M.Tech. in Computer Science (2019 - 2024)",
-                    "CGPA: 3.53/4"),
-                educationField(
-                    "Gautam International Senior Secondary School, Dehradun",
-                    "Higher Secondary Education (2016 - 2018)",
-                    "Percentage: 90.8%"),
-                educationField(
-                    "Ann Mary School, Dehradun",
-                    "Secondary School Education (2011 - 2016)",
-                    "Percentage: 94.2%"),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      educationField(
+                          "International Institute of Information Technology Bangalore",
+                          "Integrated M.Tech. in Computer Science (2019 - 2024)",
+                          "CGPA: 3.53/4"),
+                      educationField(
+                          "Gautam International Senior Secondary School, Dehradun",
+                          "Higher Secondary Education (2016 - 2018)",
+                          "Percentage: 90.8%"),
+                      educationField(
+                          "Ann Mary School, Dehradun",
+                          "Secondary School Education (2011 - 2016)",
+                          "Percentage: 94.2%"),
+                    ],
+                  ),
+                ),
+                Spacer(
+                  flex: 2,
+                ),
                 Center(
                   child: download(),
-                )
+                ),
+                Spacer(
+                  flex: 4,
+                ),
               ],
             ),
           ),
@@ -92,7 +108,7 @@ class Education {
                   child: new Text(
                     "Download Transcript",
                     style: TextStyle(
-                        fontSize: width / 60, color: Colors.pinkAccent[400]),
+                        fontSize: width / 20, color: Colors.pinkAccent[400]),
                   ),
                 ))));
   }
@@ -101,55 +117,53 @@ class Education {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: Container(
-            width: width / 8 * 5,
+            width: width / 4 * 3,
+            height: height / 2,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 100),
               color: Color.fromARGB(130, 255, 255, 255),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SelectableText(
+                    Spacer(
+                      flex: 1,
+                    ),
+                    Text(
                       heading,
+                      softWrap: true,
+                      overflow: TextOverflow.clip,
                       style: GoogleFonts.getFont(
                         'Source Code Pro',
                         textStyle: TextStyle(
-                          fontSize: width / 70,
+                          fontSize: width / 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.pink[700],
                           height: 1.5,
                         ),
                       ),
                     ),
-                    Row(
-                      children: [
-                        // SelectableText(
-                        //   "• ",
-                        //   style: GoogleFonts.getFont(
-                        //     'Source Code Pro',
-                        //     textStyle: TextStyle(
-                        //       fontSize: width / 100,
-                        //       fontWeight: FontWeight.bold,
-                        //       color: Colors.white,
-                        //       height: 1.5,
-                        //     ),
-                        //   ),
-                        // ),
-                        SelectableText(
-                          text,
-                          style: GoogleFonts.getFont(
-                            'Source Code Pro',
-                            textStyle: TextStyle(
-                              fontSize: width / 90,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.pink,
-                              height: 1.5,
-                            ),
-                          ),
+                    Spacer(
+                      flex: 1,
+                    ),
+                    Text(
+                      text,
+                      softWrap: true,
+                      overflow: TextOverflow.clip,
+                      style: GoogleFonts.getFont(
+                        'Source Code Pro',
+                        textStyle: TextStyle(
+                          fontSize: width / 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pink,
+                          height: 1.5,
                         ),
-                      ],
+                      ),
+                    ),
+                    Spacer(
+                      flex: 1,
                     ),
                     Row(
                       children: [
@@ -158,19 +172,21 @@ class Education {
                           style: GoogleFonts.getFont(
                             'Source Code Pro',
                             textStyle: TextStyle(
-                              fontSize: width / 90,
+                              fontSize: width / 25,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               height: 1.5,
                             ),
                           ),
                         ),
-                        SelectableText(
+                        Text(
                           additionalText,
+                          softWrap: true,
+                          overflow: TextOverflow.clip,
                           style: GoogleFonts.getFont(
                             'Source Code Pro',
                             textStyle: TextStyle(
-                              fontSize: width / 90,
+                              fontSize: width / 25,
                               fontWeight: FontWeight.bold,
                               color: Colors.pink,
                               height: 1.5,
@@ -178,7 +194,10 @@ class Education {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    Spacer(
+                      flex: 1,
+                    ),
                   ]),
             )));
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/laptop/CopyRight.dart';
 import 'package:portfolio/laptop/Education.dart';
 import 'package:portfolio/laptop/Welcome.dart';
@@ -15,25 +16,6 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
-
-  static double widthCalc(BuildContext context) {
-    MediaQueryData queryData = MediaQuery.of(context);
-    return queryData.size.width;
-  }
-
-  static double heightCalc(BuildContext context) {
-    MediaQueryData queryData = MediaQuery.of(context);
-    return queryData.size.height;
-  }
-
-  static double orientation(BuildContext context) {
-    if (widthCalc(context) > heightCalc(context)) {
-      return 0;
-    } else {
-      return 1;
-    }
-    // 0 means landscape and 1 means portrait
-  }
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -191,7 +173,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icons.code,
                 color: Colors.white,
               ),
-              title: Text("Archit Sangal Portfolio"),
+              title: Text(
+                'Archit Sangal',
+                //selectionControls: TextSelectionControls(),
+                style: GoogleFonts.getFont(
+                  'Dancing Script', //'Averia Serif Libre',
+                  textStyle: TextStyle(
+                    fontSize: width / 17,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 219, 216, 227),
+                    height: 1,
+                  ),
+                ),
+              ),
             ),
             body: child(height, width)));
   }

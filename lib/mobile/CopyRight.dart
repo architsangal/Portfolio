@@ -11,8 +11,7 @@ class CopyRight {
       child: Center(
         child: Text(
           "CopyRight \u00a9 2021 onwards, Archit Sangal. All Rights Reserved.",
-          style: TextStyle(
-              color: Colors.white, fontSize: height / 190 + width / 190),
+          style: TextStyle(color: Colors.white, fontSize: width / 40),
         ),
       ),
     );

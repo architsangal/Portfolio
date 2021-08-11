@@ -32,65 +32,68 @@ class Welcome {
           height: height,
           width: width,
           child: Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(10.0),
             child: Container(
-              width: 240.0,
-              height: 42.0,
+              // width: 240.0,
+              // height: 42.0,
               alignment: Alignment.centerLeft,
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Spacer(
+                      flex: 10,
+                    ),
                     SelectableText(
                       'Hi! I am',
                       //selectionControls: TextSelectionControls(),
                       style: GoogleFonts.getFont(
                         'Source Code Pro', //'Averia Serif Libre',
                         textStyle: TextStyle(
-                          fontSize: width / 25,
+                          fontSize: width / 15,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 219, 216, 227),
                           height: 1,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: height / 30,
-                      width: width / 10,
+                    Spacer(
+                      flex: 2,
                     ),
                     SelectableText(
                       'Archit Sangal',
                       style: GoogleFonts.getFont(
                         'Source Code Pro', //'Dancing Script',
                         textStyle: TextStyle(
-                          fontSize: width / 20,
+                          fontSize: width / 10,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                           height: 1,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: height / 30,
-                      width: width / 10,
+                    Spacer(
+                      flex: 1,
                     ),
                     SelectableText(
                       'Mobile and Web Developer',
                       style: GoogleFonts.getFont(
                         'Pacifico',
                         textStyle: TextStyle(
-                          fontSize: width / 50,
+                          fontSize: width / 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.pink,
                           height: 1,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: height / 5,
-                      width: width / 10,
+                    Spacer(
+                      flex: 3,
                     ),
                     download(),
+                    Spacer(
+                      flex: 8,
+                    ),
                   ]),
             ),
           ),
@@ -105,7 +108,7 @@ class Welcome {
 
   Container download() {
     return Container(
-        alignment: Alignment.bottomRight,
+        alignment: Alignment.bottomCenter,
         child: Padding(
             padding: const EdgeInsets.all(15),
             child: ElevatedButton(
@@ -129,7 +132,7 @@ class Welcome {
                   style: GoogleFonts.getFont(
                     'Pacifico',
                     textStyle: TextStyle(
-                      fontSize: width / 60,
+                      fontSize: width / 20,
                       color: Colors.white,
                       height: 1,
                     ),

@@ -35,6 +35,7 @@ dependencies:
   email_validator: '^1.0.6'
   another_flushbar: ^1.10.24
   url_launcher: ^6.0.9
+  timelines: ^0.1.0
 
 dev_dependencies:
   flutter_test:

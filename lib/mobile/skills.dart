@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 // ignore: camel_case_types
 class skills {
@@ -14,109 +13,103 @@ class skills {
       height: 1.1 * height,
       width: width,
       color: Colors.white,
-      child: Stack(
-        children: [
-          Row(children: [
-            Container(
-              height: height * 1.2,
-              width: width / 3,
-              child: FadeInImage(
-                placeholder: MemoryImage(kTransparentImage),
-                image: AssetImage("assets/images/skills.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              height: height * 1.2,
-              width: 5 * width / 9,
-              child: Padding(
-                padding: const EdgeInsets.all(50.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SelectableText(
-                      'Skills',
-                      style: GoogleFonts.getFont(
-                        'Pacifico',
-                        textStyle: TextStyle(
-                          fontSize: width / 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          height: 1,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: height / 10,
-                      width: width / 10,
-                    ),
-                    SelectableText(
-                      'I am a full Stack Developer and have experience of making great looking responsive mobile apps and websites.' +
-                          ' The websites and apps made by me are easy to maintain. I have an affinity for graphic designing and front end development but' +
-                          ' I can work equally efficiently on backend as well. I like making digital art. Following are the key highlights -',
-                      style: GoogleFonts.getFont(
-                        'Source Code Pro',
-                        textStyle: TextStyle(
-                          fontSize: width / 90,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          height: 1,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: height / 20,
-                      width: width / 20,
-                    ),
-                    Container(
-                      child: Wrap(
-                        children: [
-                          skillbutton("Flutter"),
-                          skillbutton("Dart"),
-                          skillbutton("Rive"),
-                          skillbutton("Firebase"),
-                          skillbutton("Java"),
-                          skillbutton("C++"),
-                          skillbutton("Python"),
-                          skillbutton("C"),
-                          skillbutton("UI/UX"),
-                          skillbutton("Android Developer"),
-                          skillbutton("iOS Developer"),
-                          skillbutton("Web Developer"),
-                          skillbutton("Adobe Illustrator"),
-                          skillbutton("Adobe InDesign"),
-                          skillbutton("Adobe Photoshop"),
-                          skillbutton("GitHub"),
-                          skillbutton("Git"),
-                          skillbutton("Assembly"),
-                          skillbutton("Verilog"),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: height / 15,
-                      width: width / 15,
-                    ),
-                    SelectableText(
-                      '"I want to make things that inspire and truly make a difference"',
-                      style: GoogleFonts.getFont(
-                        'Source Code Pro', //'Nanum Gothic',
-                        textStyle: TextStyle(
-                          fontSize: width / 40,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.pink,
-                          height: 1,
-                        ),
-                      ),
-                    ),
-                  ],
+      child: Stack(children: [
+        Container(
+          height: height * 1.2,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Spacer(
+                  flex: 1,
                 ),
-              ),
+                SelectableText(
+                  'Skills',
+                  style: GoogleFonts.getFont(
+                    'Pacifico',
+                    textStyle: TextStyle(
+                      fontSize: width / 10,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      height: 2,
+                    ),
+                  ),
+                ),
+                Spacer(
+                  flex: 2,
+                ),
+                Container(
+                  width: width * 4 / 5,
+                  child: Text(
+                    'I am a full Stack Developer and have experience of making great looking responsive mobile apps and websites.' +
+                        ' The websites and apps made by me are easy to maintain. I have an affinity for graphic designing and front end development but' +
+                        ' I can work equally efficiently on backend as well. I like making digital art. Following are the key highlights -',
+                    overflow: TextOverflow.clip,
+                    style: GoogleFonts.getFont(
+                      'Source Code Pro',
+                      textStyle: TextStyle(
+                        fontSize: width / 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        height: 1,
+                      ),
+                    ),
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+                Container(
+                  child: Wrap(
+                    children: [
+                      skillbutton("Flutter"),
+                      skillbutton("Dart"),
+                      skillbutton("Rive"),
+                      skillbutton("Firebase"),
+                      skillbutton("Java"),
+                      skillbutton("C++"),
+                      skillbutton("Python"),
+                      skillbutton("C"),
+                      skillbutton("UI/UX"),
+                      skillbutton("Android Developer"),
+                      skillbutton("iOS Developer"),
+                      skillbutton("Web Developer"),
+                      skillbutton("Adobe Illustrator"),
+                      skillbutton("Adobe InDesign"),
+                      skillbutton("Adobe Photoshop"),
+                      skillbutton("GitHub"),
+                      skillbutton("Git"),
+                      skillbutton("Assembly"),
+                      skillbutton("Verilog"),
+                    ],
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+                SelectableText(
+                  'I want to make things that inspire and truly make a difference',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.getFont(
+                    'Source Code Pro', //'Nanum Gothic',
+                    textStyle: TextStyle(
+                      fontSize: width / 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.pink,
+                      height: 1,
+                    ),
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+              ],
             ),
-          ]),
-        ],
-      ),
+          ),
+        ),
+      ]),
     );
   }
 
@@ -139,7 +132,7 @@ class skills {
             style: GoogleFonts.getFont(
               'Source Code Pro', //'Nanum Gothic',
               textStyle: TextStyle(
-                fontSize: width / 120,
+                fontSize: width / 30,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 height: 1,

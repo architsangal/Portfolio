@@ -58,10 +58,10 @@ class contact_me {
     // Contacts
     return Container(
       width: width,
-      height: 1 * height,
+      height: 1.5 * height,
       child: Stack(children: [
         Container(
-          height: height,
+          height: height * 1.5,
           width: width,
           child: FadeInImage(
             placeholder: MemoryImage(kTransparentImage),
@@ -77,7 +77,7 @@ class contact_me {
               color: Color.fromARGB(130, 255, 255, 255),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,20 +88,17 @@ class contact_me {
                       style: GoogleFonts.getFont(
                         'Pacifico',
                         textStyle: TextStyle(
-                          fontSize: width / 20,
+                          fontSize: width / 10,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(
                               255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
-                          height: 1,
+                          height: 2,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: height / 25,
-                    width: width / 10,
-                  ),
-                  Row(
+                  Spacer(),
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Column(
@@ -111,7 +108,7 @@ class contact_me {
                             style: GoogleFonts.getFont(
                               'Source Code Pro',
                               textStyle: TextStyle(
-                                fontSize: width / 60,
+                                fontSize: width / 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.pink,
                                 height: 1,
@@ -122,7 +119,8 @@ class contact_me {
                             height: height / 40,
                             width: width / 10,
                           ),
-                          Row(
+                          Wrap(
+                            crossAxisAlignment: WrapCrossAlignment.end,
                             children: [
                               Tooltip(
                                   message: "Email",
@@ -232,16 +230,19 @@ class contact_me {
                             height: height / 17,
                             width: width / 10,
                           ),
+                          Divider(
+                            color: Colors.yellow,
+                          ),
                           Container(
-                            width: this.width / 3,
                             child: Text(
                               "I would love to hear from you! Whether you " +
                                   "have a question, want to discuss your project" +
                                   " and ideas, or just for a general chit-chat. Drop me a message here ->",
                               overflow: TextOverflow.clip,
+                              softWrap: true,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: this.width / 60,
+                                fontSize: this.width / 20,
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14),
@@ -260,7 +261,6 @@ class contact_me {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Container(
-                                  width: this.width / 3,
                                   child: Padding(
                                     padding: EdgeInsets.all(15.0),
                                     child: TextFormField(
@@ -320,7 +320,6 @@ class contact_me {
                                   ),
                                 ),
                                 Container(
-                                  width: this.width / 3,
                                   child: Padding(
                                     padding: EdgeInsets.all(15.0),
                                     child: TextFormField(
@@ -383,7 +382,6 @@ class contact_me {
                                   ),
                                 ),
                                 Container(
-                                  width: this.width / 3,
                                   child: Padding(
                                     padding: EdgeInsets.all(15.0),
                                     child: TextFormField(
@@ -437,7 +435,6 @@ class contact_me {
                                   ),
                                 ),
                                 Container(
-                                  width: this.width / 3,
                                   child: Padding(
                                     padding: EdgeInsets.all(15.0),
                                     child: TextFormField(
