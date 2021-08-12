@@ -97,7 +97,6 @@ class contact_me {
                       ),
                     ),
                   ),
-                  Spacer(),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
