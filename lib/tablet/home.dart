@@ -210,13 +210,13 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
     this.experience = Experience(height, width);
     var widgets = <Widget>[
       this.welcome.welcome(),
-      this.aboutme.About_me(),
-      this.skill.Skills(),
-      this.education.education(),
-      this.experience.experience(),
-      this.projects.widget_container(), // projects
-      this.contactme.Contact_Me(),
-      this.copyright.copyright(),
+      // this.aboutme.About_me(),
+      // this.skill.Skills(),
+      // this.education.education(),
+      // this.experience.experience(),
+      // this.projects.widget_container(), // projects
+      // this.contactme.Contact_Me(),
+      // this.copyright.copyright(),
     ];
 
     // https://github.com/flutter/flutter/issues/80925#issuecomment-824651754 controller should have same controller
