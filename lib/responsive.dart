@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/laptop/home.dart';
 import 'package:portfolio/mobile/home.dart';
+import 'package:portfolio/tablet/home.dart';
 
 class Responsive extends StatelessWidget {
   const Responsive({key}) : super(key: key);
@@ -24,7 +25,7 @@ class Responsive extends StatelessWidget {
     }
     // Tablet
     else {
-      return MyHomePage(title: 'Portfolio');
+      return MyHomePageTablet(title: 'Portfolio');
     }
   }
 
