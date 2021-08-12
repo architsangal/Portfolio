@@ -99,7 +99,8 @@ class skills {
                       width: width / 15,
                     ),
                     SelectableText(
-                      '"I want to make things that inspire and truly make a difference"',
+                      'I want to make things that inspire and truly make a difference',
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.getFont(
                         'Source Code Pro', //'Nanum Gothic',
                         textStyle: TextStyle(

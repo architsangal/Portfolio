@@ -556,7 +556,7 @@ class Projects {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30.0),
                     child: FadeInImage(
-                      height: 1 / 5 * height,
+                      height: 1 / 4 * height,
                       width: width / 1.4,
                       fit: BoxFit.cover,
                       placeholder: MemoryImage(kTransparentImage),
@@ -573,7 +573,7 @@ class Projects {
                       style: GoogleFonts.getFont(
                         'Source Code Pro',
                         textStyle: TextStyle(
-                          fontSize: width / 25,
+                          fontSize: width / 30,
                           fontWeight: FontWeight.bold,
                           color: Colors.blue[800],
                           height: 1,
@@ -589,7 +589,7 @@ class Projects {
                       style: GoogleFonts.getFont(
                         'Source Code Pro', //'Nanum Gothic',
                         textStyle: TextStyle(
-                          fontSize: width / 80,
+                          fontSize: width / 50,
                           fontWeight: FontWeight.bold,
                           color: Colors.blue[900],
                           height: 1,

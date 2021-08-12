@@ -16,11 +16,11 @@ class Responsive extends StatelessWidget {
     // 0 means landscape and 1 means portrait
 
     // Mobile
-    if (width <= 768) {
+    if (width <= 700) {
       return MyHomePageMobile(title: 'Portfolio');
     }
     // Laptop
-    else if (width > 768 && orientation == 0) {
+    else if (width > 700 && orientation == 0) {
       return MyHomePage(title: 'Portfolio');
     }
     // Tablet

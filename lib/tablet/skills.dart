@@ -17,7 +17,7 @@ class skills {
         Container(
           height: height * 1.2,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(40.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +50,7 @@ class skills {
                     style: GoogleFonts.getFont(
                       'Source Code Pro',
                       textStyle: TextStyle(
-                        fontSize: width / 25,
+                        fontSize: width / 40,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         height: 1,

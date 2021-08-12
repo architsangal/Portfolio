@@ -20,7 +20,7 @@ class about_me {
                   placeholder: MemoryImage(kTransparentImage),
                   image: AssetImage('assets/images/aboutme.jpg'))),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(40.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +61,7 @@ class about_me {
                     style: GoogleFonts.getFont(
                       'Source Code Pro',
                       textStyle: TextStyle(
-                        fontSize: width / 25,
+                        fontSize: width / 40,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         height: 1.5,
@@ -84,7 +84,7 @@ class about_me {
                     ),
                     child: ConstrainedBox(
                         constraints: BoxConstraints(
-                            maxWidth: width / 3 * 2, maxHeight: height / 2),
+                            maxWidth: width / 3 * 2, maxHeight: height * 0.4),
                         child: FadeInImage(
                             fit: BoxFit.cover,
                             placeholder: MemoryImage(kTransparentImage),

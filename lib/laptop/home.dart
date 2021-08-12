@@ -62,9 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Scaffold(
             appBar: AppBar(
               actions: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
                 TextButton(
                   onPressed: () {
                     controller_of_list.animateTo(height,
@@ -79,9 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
                 TextButton(
                   onPressed: () {
                     //Scrollable.ensureVisible(keyWelcome.currentContext);
@@ -97,9 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
                 TextButton(
                   onPressed: () {
                     controller_of_list.animateTo(3.3 * height, //(1+1.2+1.1)
@@ -114,9 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
                 TextButton(
                   onPressed: () {
                     controller_of_list.animateTo(4.3 * height, //(1+1.2+1.1)
@@ -131,9 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
                 TextButton(
                   onPressed: () {
                     controller_of_list.animateTo(5.3 * height, //(1+1.2+1.1+1)
@@ -148,9 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
                 TextButton(
                   onPressed: () {
                     controller_of_list.animateTo(6.8 * height,
@@ -165,21 +153,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.06,
-                ),
+                Spacer(),
               ],
-              leading: Icon(
-                Icons.code,
-                color: Colors.white,
-              ),
               title: Text(
                 'Archit Sangal',
                 //selectionControls: TextSelectionControls(),
                 style: GoogleFonts.getFont(
                   'Dancing Script', //'Averia Serif Libre',
                   textStyle: TextStyle(
-                    fontSize: width / 17,
+                    fontSize: width / 50,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 219, 216, 227),
                     height: 1,

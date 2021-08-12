@@ -76,7 +76,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "ABOUT ME",
-                          style: TextStyle(fontSize: 15.0, color: Colors.pink),
+                          style: TextStyle(fontSize: 25.0, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -92,7 +92,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "SKILLS",
-                          style: TextStyle(fontSize: 15.0, color: Colors.pink),
+                          style: TextStyle(fontSize: 25.0, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -107,7 +107,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "EDUCATION",
-                          style: TextStyle(fontSize: 15.0, color: Colors.pink),
+                          style: TextStyle(fontSize: 25.0, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -122,7 +122,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "EXPERIENCE",
-                          style: TextStyle(fontSize: 15.0, color: Colors.pink),
+                          style: TextStyle(fontSize: 25.0, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -138,7 +138,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "PROJECTS",
-                          style: TextStyle(fontSize: 15.0, color: Colors.pink),
+                          style: TextStyle(fontSize: 25.0, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -153,7 +153,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "GET IN TOUCH",
-                          style: TextStyle(fontSize: 15.0, color: Colors.pink),
+                          style: TextStyle(fontSize: 25.0, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -173,6 +173,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                   child: Icon(
                     Icons.menu_rounded,
                     color: Colors.pink,
+                    size: width / 15,
                   ),
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
@@ -190,7 +191,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
                       fontSize: width / 15,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 219, 216, 227),
-                      height: 1.5,
+                      height: 1,
                     ),
                   ),
                 ),
@@ -210,13 +211,13 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
     this.experience = Experience(height, width);
     var widgets = <Widget>[
       this.welcome.welcome(),
-      // this.aboutme.About_me(),
-      // this.skill.Skills(),
-      // this.education.education(),
-      // this.experience.experience(),
-      // this.projects.widget_container(), // projects
-      // this.contactme.Contact_Me(),
-      // this.copyright.copyright(),
+      this.aboutme.About_me(),
+      this.skill.Skills(),
+      this.education.education(),
+      this.experience.experience(),
+      this.projects.widget_container(), // projects
+      this.contactme.Contact_Me(),
+      this.copyright.copyright(),
     ];
 
     // https://github.com/flutter/flutter/issues/80925#issuecomment-824651754 controller should have same controller

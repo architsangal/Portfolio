@@ -27,7 +27,7 @@ class Experience {
                   placeholder: MemoryImage(kTransparentImage),
                   image: AssetImage('assets/images/experience.jpg'))),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(40.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +95,7 @@ class Experience {
                     style: GoogleFonts.getFont(
                       'Source Code Pro',
                       textStyle: TextStyle(
-                        fontSize: width / 20,
+                        fontSize: width / 25,
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
                         height: 1.5,
@@ -111,7 +111,7 @@ class Experience {
                     style: GoogleFonts.getFont(
                       'Source Code Pro',
                       textStyle: TextStyle(
-                        fontSize: width / 25,
+                        fontSize: width / 35,
                         fontWeight: FontWeight.bold,
                         color: Colors.pinkAccent,
                         height: 1.5,

@@ -32,7 +32,7 @@ class Welcome {
           height: height,
           width: width,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(40.0),
             child: Container(
               // width: 240.0,
               // height: 42.0,
