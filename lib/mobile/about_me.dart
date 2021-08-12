@@ -36,7 +36,7 @@ class about_me {
                       fontSize: width / 10,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      height: 1,
+                      height: 2,
                     ),
                   ),
                 ),
