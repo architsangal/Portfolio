@@ -17,3 +17,5 @@
 -`flutter pub global run peanut:peanut`
 
 -`git push --force origin --set-upstream gh-pages`
+
+Consider this project for grading in SE.
