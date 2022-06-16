@@ -101,7 +101,7 @@ class Education {
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
                 onPressed: () async {
                   _launchURL(
-                      "https://drive.google.com/file/d/1qDHH1M1fGM64uK0jsfqW0r883mIj-LPk/view?usp=sharing");
+                      "https://drive.google.com/file/d/1FhM_Em5N2421Zs0IS3g__1AuBsn4XgJl/view?usp=sharing");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15),
