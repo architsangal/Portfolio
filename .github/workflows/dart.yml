@@ -2,7 +2,7 @@ name: Portfolio Deployment
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     name: Build Web
