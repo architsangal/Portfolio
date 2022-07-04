@@ -21,9 +21,7 @@ class Responsive extends StatelessWidget {
     }
     // Laptop
     else if (width > 700 && orientation == 0) {
-      // TODO Update
-      return MyHomePageMobile(title: 'Portfolio');
-      //return MyHomePage(title: 'Portfolio');
+      return MyHomePage(title: 'Portfolio');
     }
     // Tablet
     else {
