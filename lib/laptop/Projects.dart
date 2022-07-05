@@ -66,7 +66,7 @@ class Projects {
     return Container(
         height: this.screensize_height,
         child: RawScrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             thumbColor:
                 Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
             radius: Radius.circular(5),

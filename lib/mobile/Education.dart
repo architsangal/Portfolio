@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: camel_case_types
 class Education {
   final height, width;
   Education(this.height, this.width);
