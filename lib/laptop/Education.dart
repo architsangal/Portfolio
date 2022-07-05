@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: camel_case_types
 class Education {
   final height, width;
   Education(this.height, this.width);
@@ -27,7 +26,7 @@ class Education {
                   placeholder: MemoryImage(kTransparentImage),
                   image: AssetImage('assets/images/education.jpg'))),
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(50.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,25 +43,41 @@ class Education {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: height / 40,
-                  width: width / 10,
+                Spacer(
+                  flex: 1,
                 ),
-                educationField(
-                    "International Institute of Information Technology Bangalore",
-                    "Integrated M.Tech. in Computer Science (2019 - 2024)",
-                    "CGPA: 3.53/4"),
-                educationField(
-                    "Gautam International Senior Secondary School, Dehradun",
-                    "Higher Secondary Education (2016 - 2018)",
-                    "Percentage: 90.8%"),
-                educationField(
-                    "Ann Mary School, Dehradun",
-                    "Secondary School Education (2011 - 2016)",
-                    "Percentage: 94.2%"),
+                Container(
+                  height: height/1.5,
+                  width: width/4*3,
+                  child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
+                      educationField(
+                          "International Institute of Information Technology Bangalore",
+                          "Integrated M.Tech. in Computer Science (2019 - 2024)",
+                          "CGPA: 3.61/4"),
+                      educationField(
+                          "Gautam International Senior Secondary School, Dehradun",
+                          "Higher Secondary Education (2016 - 2018)",
+                          "Percentage: 90.8%"),
+                      educationField(
+                          "Ann Mary School, Dehradun",
+                          "Secondary School Education (2011 - 2016)",
+                          "Percentage: 94.2%"),
+                    ],
+                  ),
+                ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
                 Center(
                   child: download(),
-                )
+                ),
+                Spacer(
+                  flex: 1,
+                ),
               ],
             ),
           ),
@@ -101,6 +116,7 @@ class Education {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: Container(
+            height: height/6,
             width: width / 8 * 5,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 100),
@@ -125,18 +141,6 @@ class Education {
                     ),
                     Row(
                       children: [
-                        // SelectableText(
-                        //   "• ",
-                        //   style: GoogleFonts.getFont(
-                        //     'Source Code Pro',
-                        //     textStyle: TextStyle(
-                        //       fontSize: width / 100,
-                        //       fontWeight: FontWeight.bold,
-                        //       color: Colors.white,
-                        //       height: 1.5,
-                        //     ),
-                        //   ),
-                        // ),
                         SelectableText(
                           text,
                           style: GoogleFonts.getFont(
