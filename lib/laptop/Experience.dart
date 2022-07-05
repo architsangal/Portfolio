@@ -27,7 +27,7 @@ class Experience {
                   placeholder: MemoryImage(kTransparentImage),
                   image: AssetImage('assets/images/experience.jpg'))),
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(50.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,29 +44,43 @@ class Experience {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: height / 40,
-                  width: width / 10,
+                Spacer(
+                  flex: 1,
                 ),
-                experienceField(
-                    "FOSSEE Animations, IIT Bombay Fellowship",
-                    "The FOSSEE Animations Project works on making seemingly complex Science and Mathematics topics feel natural " +
-                        "and approachable through animations. I got the opportunity to work with the team and create lecture notes and" +
-                        " animations for Linear Algebra in Mathematics. You can find further details in FOSSEE Project card under Projects below."),
-                experienceField(
-                    "Zense",
-                    "Zense is the Developers Club of IIIT Bangalore." +
-                        "I worked on several projects for the club. The club promotes open source culture in the college. You can find further details in under Projects below."),
+                Container(
+                  height: height/2,
+                  width: width/4*3,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        experienceField(
+                            "FOSSEE Animations, IIT Bombay Fellowship",
+                            "The FOSSEE Animations Project works on making seemingly complex Science and Mathematics topics feel natural " +
+                                "and approachable through animations. I got the opportunity to work with the team and create lecture notes and" +
+                                " animations for Linear Algebra in Mathematics. You can find further details in FOSSEE Project card under Projects below.",250),
+                        experienceField(
+                            "Zense",
+                            "Zense is the Developers Club of IIIT Bangalore." +
+                                "I worked on several projects for the club. The club promotes open source culture in the college. You can find further details in under Projects below.",200),
+                      ],
+                    ),
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
               ],
             ),
           ),
         ]));
   }
 
-  Padding experienceField(String heading, String text) {
+  Padding experienceField(String heading, String text, int minHeight) {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: Container(
+            height: height/6 > minHeight ? height/6 : minHeight,
             width: width / 8 * 5,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 100),

@@ -27,7 +27,7 @@ class Projects {
         constraints: BoxConstraints(
             minWidth: screensize_width, minHeight: 1 * screensize_height),
         child: Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.all(20),
           child: Wrap(
             children: [
               Column(
