@@ -526,8 +526,8 @@ class Projects {
       }
     }
     List<Padding> skillslist = [];
-    for (String skill_i in skills) {
-      skillslist.add(skillused(skill_i));
+    for (String skillI in skills) {
+      skillslist.add(skillused(skillI));
     }
 
     return ClipRRect(

@@ -47,8 +47,9 @@ class Education {
                   flex: 1,
                 ),
                 Container(
-                  height: height/2,
+                  height: height / 2,
                   child: SingleChildScrollView(
+                    primary: false,
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
@@ -115,7 +116,7 @@ class Education {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: Container(
-            height: height/6 > 120 ? height/6 : 120,
+            height: height / 6 > 120 ? height / 6 : 120,
             //width: width / 8 * 7,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 100),

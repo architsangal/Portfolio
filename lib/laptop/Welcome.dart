@@ -27,70 +27,66 @@ class Welcome {
         // sized box
         // to give space
         // check this out- https://youtu.be/EHPu_DzRfqA
-        SizedBox(
+        Container(
           height: height,
-          width: width,
           child: Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(50.0),
             child: Container(
-              width: 240.0,
-              height: 42.0,
+              width: width,
+              height: height,
               alignment: Alignment.centerLeft,
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SelectableText(
-                      'Hi! I am',
-                      //selectionControls: TextSelectionControls(),
-                      style: GoogleFonts.getFont(
-                        'Source Code Pro', //'Averia Serif Libre',
-                        textStyle: TextStyle(
-                          fontSize: width / 25,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 219, 216, 227),
-                          height: 1,
+              child: SingleChildScrollView(
+                primary: false,
+                scrollDirection: Axis.vertical,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SelectableText(
+                        'Hi! I am',
+                        //selectionControls: TextSelectionControls(),
+                        style: GoogleFonts.getFont(
+                          'Source Code Pro', //'Averia Serif Libre',
+                          textStyle: TextStyle(
+                            fontSize: width / 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 219, 216, 227),
+                            height: 1,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: height / 30,
-                      width: width / 10,
-                    ),
-                    SelectableText(
-                      'Archit Sangal',
-                      style: GoogleFonts.getFont(
-                        'Source Code Pro', //'Dancing Script',
-                        textStyle: TextStyle(
-                          fontSize: width / 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          height: 1,
+                      //Spacer(flex: 1),
+                      SelectableText(
+                        'Archit Sangal',
+                        style: GoogleFonts.getFont(
+                          'Source Code Pro', //'Dancing Script',
+                          textStyle: TextStyle(
+                            fontSize: width / 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            height: 1,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: height / 30,
-                      width: width / 10,
-                    ),
-                    SelectableText(
-                      'Mobile and Web Developer',
-                      style: GoogleFonts.getFont(
-                        'Pacifico',
-                        textStyle: TextStyle(
-                          fontSize: width / 50,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.pink,
-                          height: 1,
+                      //Spacer(flex: 1),
+                      SelectableText(
+                        'Mobile and Web Developer',
+                        style: GoogleFonts.getFont(
+                          'Pacifico',
+                          textStyle: TextStyle(
+                            fontSize: width / 50,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.pink,
+                            height: 1,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: height / 5,
-                      width: width / 10,
-                    ),
-                    download(),
-                  ]),
+                      SizedBox(
+                        height: height / 3,
+                      ),
+                      download(),
+                    ]),
+              ),
             ),
           ),
         ),
