@@ -115,7 +115,7 @@ class Welcome {
                           side: BorderSide(color: Colors.pinkAccent[400])))),
               onPressed: () async {
                 _launchURL(
-                    "https://architsangal.github.io/Resume/");
+                    "https://drive.google.com/file/d/1AS9ZU0JDcxeLlP0dfq81Yocy0nYhXwOy/view?usp=sharing");
               },
               child: Padding(
                 padding: const EdgeInsets.all(15),

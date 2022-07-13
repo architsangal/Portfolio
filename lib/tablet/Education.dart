@@ -101,7 +101,7 @@ class Education {
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
                 onPressed: () async {
                   _launchURL(
-                      "https://architsangal.github.io/Transcript/");
+                      "https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15),
