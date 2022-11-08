@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: camel_case_types
 class Education {
   final height, width;
   Education(this.height, this.width);
@@ -27,7 +26,7 @@ class Education {
                   placeholder: MemoryImage(kTransparentImage),
                   image: AssetImage('assets/images/education.jpg'))),
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(50.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,25 +43,41 @@ class Education {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: height / 40,
-                  width: width / 10,
+                Spacer(
+                  flex: 1,
                 ),
-                educationField(
-                    "International Institute of Information Technology Bangalore",
-                    "Integrated M.Tech. in Computer Science (2019 - 2024)",
-                    "CGPA: 3.53/4"),
-                educationField(
-                    "Gautam International Senior Secondary School, Dehradun",
-                    "Higher Secondary Education (2016 - 2018)",
-                    "Percentage: 90.8%"),
-                educationField(
-                    "Ann Mary School, Dehradun",
-                    "Secondary School Education (2011 - 2016)",
-                    "Percentage: 94.2%"),
+                Container(
+                  height: height / 2,
+                  child: SingleChildScrollView(
+                    primary: false,
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        educationField(
+                            "International Institute of Information Technology Bangalore",
+                            "Integrated M.Tech. in Computer Science (2019 - 2024)",
+                            "CGPA: 3.61/4"),
+                        educationField(
+                            "Gautam International Senior Secondary School, Dehradun",
+                            "Higher Secondary Education (2016 - 2018)",
+                            "Percentage: 90.8%"),
+                        educationField(
+                            "Ann Mary School, Dehradun",
+                            "Secondary School Education (2011 - 2016)",
+                            "Percentage: 94.2%"),
+                      ],
+                    ),
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
                 Center(
                   child: download(),
-                )
+                ),
+                Spacer(
+                  flex: 1,
+                ),
               ],
             ),
           ),
@@ -85,7 +100,7 @@ class Education {
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
                 onPressed: () async {
                   _launchURL(
-                      "https://drive.google.com/file/d/1FhM_Em5N2421Zs0IS3g__1AuBsn4XgJl/view?usp=sharing");
+                      "https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15),
@@ -101,7 +116,8 @@ class Education {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: Container(
-            width: width / 8 * 5,
+            height: height / 6 > 120 ? height / 6 : 120,
+            //width: width / 8 * 7,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(width / 100),
               color: Color.fromARGB(130, 255, 255, 255),
@@ -125,18 +141,6 @@ class Education {
                     ),
                     Row(
                       children: [
-                        // SelectableText(
-                        //   "• ",
-                        //   style: GoogleFonts.getFont(
-                        //     'Source Code Pro',
-                        //     textStyle: TextStyle(
-                        //       fontSize: width / 100,
-                        //       fontWeight: FontWeight.bold,
-                        //       color: Colors.white,
-                        //       height: 1.5,
-                        //     ),
-                        //   ),
-                        // ),
                         SelectableText(
                           text,
                           style: GoogleFonts.getFont(

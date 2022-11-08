@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: camel_case_types
 class Education {
   final height, width;
   Education(this.height, this.width);
@@ -101,7 +100,7 @@ class Education {
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
                 onPressed: () async {
                   _launchURL(
-                      "https://drive.google.com/file/d/1FhM_Em5N2421Zs0IS3g__1AuBsn4XgJl/view?usp=sharing");
+                      "https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15),

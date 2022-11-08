@@ -27,7 +27,7 @@ class Projects {
         constraints: BoxConstraints(
             minWidth: screensize_width, minHeight: 1 * screensize_height),
         child: Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.all(20),
           child: Wrap(
             children: [
               Column(
@@ -66,7 +66,7 @@ class Projects {
     return Container(
         height: this.screensize_height,
         child: RawScrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             thumbColor:
                 Color.fromARGB(250, 1 * 16 + 6, 8 * 16 + 7, 10 * 16 + 7),
             radius: Radius.circular(5),
@@ -526,8 +526,8 @@ class Projects {
       }
     }
     List<Padding> skillslist = [];
-    for (String skill_i in skills) {
-      skillslist.add(skillused(skill_i));
+    for (String skillI in skills) {
+      skillslist.add(skillused(skillI));
     }
 
     return ClipRRect(
