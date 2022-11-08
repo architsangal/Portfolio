@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/laptop/CopyRight.dart';
 import 'package:portfolio/laptop/Education.dart';
 import 'package:portfolio/laptop/Welcome.dart';
 import 'package:portfolio/laptop/about_me.dart';
-import 'package:rive/rive.dart';
 import 'Experience.dart';
 import 'Projects.dart';
-import 'about_me.dart';
 import 'contact_me.dart';
 import 'skills.dart';
 
@@ -23,7 +20,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final keyWelcome = GlobalKey();
-  Artboard _artboard;
   // ignore: non_constant_identifier_names
   ScrollController controller_of_list;
   Welcome welcome;
@@ -38,20 +34,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     controller_of_list = ScrollController();
-    _loadRiveFile();
+    // _loadRiveFile();
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => {});
   }
 
-  _loadRiveFile() async {
-    final data = await rootBundle.load('assets/animations/web.riv');
-    final file = RiveFile();
-    if (file.import(data)) {
-      final artboard = file.mainArtboard;
-      artboard.addController(SimpleAnimation('Animation 1'));
-      setState(() => _artboard = artboard);
-    }
-  }
+  // _loadRiveFile() async {
+  //   final data = await rootBundle.load('assets/animations/web.riv');
+  //   final file = RiveFile();
+  //   if (file.import(data)) {
+  //     final artboard = file.mainArtboard;
+  //     artboard.addController(SimpleAnimation('Animation 1'));
+  //     setState(() => _artboard = artboard);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -179,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Center child(var height, var width) {
-    this.welcome = Welcome(height, width, _artboard);
+    this.welcome = Welcome(height, width, 'assets/animations/web.riv');
     this.aboutme = about_me(height, width);
     this.skill = skills(height, width);
     this.projects = Projects(height, width);

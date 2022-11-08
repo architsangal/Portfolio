@@ -18,21 +18,21 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.7.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  rive: ^0.6.8
+  rive: ^0.9.1
   cupertino_icons: ^1.0.2
-  google_fonts: ^2.0.0
+  google_fonts: ^3.0.1
   transparent_image: ^2.0.0
-  auto_size_text: ^2.1.0
+  auto_size_text: ^3.0.0
   fluttericon: ^2.0.0
   http: ^0.13.3
   fluttertoast: ^8.0.7
-  email_validator: '^1.0.6'
+  email_validator: ^2.1.17
   another_flushbar: ^1.10.24
   url_launcher: ^6.0.9
   timelines: ^0.1.0

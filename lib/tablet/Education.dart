@@ -8,9 +8,11 @@ class Education {
   final height, width;
   Education(this.height, this.width);
 
-  void _launchURL(_url) async => await canLaunch(_url)
-      ? await launch(_url)
-      : throw 'Could not launch $_url';
+  Future<void> _launchURL(Uri url) async {
+    await canLaunchUrl(url)
+        ? await launchUrl(url)
+        : print('could_not_launch_this_app');
+  }
 
   // ignore: non_constant_identifier_names
   Container education() {
@@ -100,8 +102,8 @@ class Education {
                                 color: Color.fromARGB(
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
                 onPressed: () async {
-                  _launchURL(
-                      "https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing");
+                  _launchURL(Uri.parse(
+                      "https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing"));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15),

@@ -27,8 +27,11 @@ class contact_me {
 
   contact_me(this.height, this.width, this.context);
 
-  void _launchURL(String link) async =>
-      await canLaunch(link) ? await launch(link) : throw 'Could not launch ';
+  Future<void> _launchURL(Uri url) async {
+    await canLaunchUrl(url)
+        ? await launchUrl(url)
+        : print('could_not_launch_this_app');
+  }
 
   Future sendEmail(
       String name, String email, String subject, String message) async {
@@ -133,7 +136,7 @@ class contact_me {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           enableFeedback: true,
-                                          primary: Colors.pink,
+                                          backgroundColor: Colors.pink,
                                           shadowColor: Colors.pinkAccent,
                                           shape: CircleBorder(),
                                           side: BorderSide(color: Colors.pink)),
@@ -141,8 +144,8 @@ class contact_me {
                                         Entypo.mail,
                                       ),
                                       onPressed: () {
-                                        _launchURL(
-                                            "mailto:architsangal2000@gmail.com");
+                                        _launchURL(Uri.parse(
+                                            "mailto:architsangal2000@gmail.com"));
                                       },
                                     )),
                                 Tooltip(
@@ -150,7 +153,7 @@ class contact_me {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           enableFeedback: true,
-                                          primary: Colors.pink,
+                                          backgroundColor: Colors.pink,
                                           shadowColor: Colors.pinkAccent,
                                           shape: CircleBorder(),
                                           side: BorderSide(color: Colors.pink)),
@@ -158,8 +161,8 @@ class contact_me {
                                         AppIcons.github,
                                       ),
                                       onPressed: () {
-                                        _launchURL(
-                                            "https://github.com/architsangal");
+                                        _launchURL(Uri.parse(
+                                            "https://github.com/architsangal"));
                                       },
                                     )),
                                 Tooltip(
@@ -167,7 +170,7 @@ class contact_me {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           enableFeedback: true,
-                                          primary: Colors.pink,
+                                          backgroundColor: Colors.pink,
                                           shadowColor: Colors.pinkAccent,
                                           shape: CircleBorder(),
                                           side: BorderSide(color: Colors.pink)),
@@ -175,8 +178,8 @@ class contact_me {
                                         Entypo.linkedin_circled,
                                       ),
                                       onPressed: () {
-                                        _launchURL(
-                                            "https://www.linkedin.com/in/archit-sangal-aa7185190/");
+                                        _launchURL(Uri.parse(
+                                            "https://www.linkedin.com/in/archit-sangal-aa7185190/"));
                                       },
                                     )),
                                 Tooltip(
@@ -184,7 +187,7 @@ class contact_me {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           enableFeedback: true,
-                                          primary: Colors.pink,
+                                          backgroundColor: Colors.pink,
                                           shadowColor: Colors.pinkAccent,
                                           shape: CircleBorder(),
                                           side: BorderSide(color: Colors.pink)),
@@ -192,8 +195,8 @@ class contact_me {
                                         Entypo.instagram,
                                       ),
                                       onPressed: () {
-                                        _launchURL(
-                                            "https://www.instagram.com/architsangal2000/");
+                                        _launchURL(Uri.parse(
+                                            "https://www.instagram.com/architsangal2000/"));
                                       },
                                     )),
                                 Tooltip(
@@ -201,7 +204,7 @@ class contact_me {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           enableFeedback: true,
-                                          primary: Colors.pink,
+                                          backgroundColor: Colors.pink,
                                           shadowColor: Colors.pinkAccent,
                                           shape: CircleBorder(),
                                           side: BorderSide(color: Colors.pink)),
@@ -209,8 +212,8 @@ class contact_me {
                                         Entypo.facebook_circled,
                                       ),
                                       onPressed: () {
-                                        _launchURL(
-                                            "https://www.facebook.com/archit.sangal.5/");
+                                        _launchURL(Uri.parse(
+                                            "https://www.facebook.com/archit.sangal.5/"));
                                       },
                                     )),
                                 Tooltip(
@@ -218,7 +221,7 @@ class contact_me {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           enableFeedback: true,
-                                          primary: Colors.pink,
+                                          backgroundColor: Colors.pink,
                                           shadowColor: Colors.pinkAccent,
                                           shape: CircleBorder(),
                                           side: BorderSide(color: Colors.pink)),
@@ -226,8 +229,8 @@ class contact_me {
                                         Zocial.stackoverflow,
                                       ),
                                       onPressed: () {
-                                        _launchURL(
-                                            "https://stackoverflow.com/users/13279920/archit-sangal?tab=profile");
+                                        _launchURL(Uri.parse(
+                                            "https://stackoverflow.com/users/13279920/archit-sangal?tab=profile"));
                                       },
                                     )),
                               ],

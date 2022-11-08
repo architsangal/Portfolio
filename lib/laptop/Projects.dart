@@ -13,8 +13,11 @@ class Projects {
 
   Projects(this.screensize_height, this.screensize_width);
 
-  void _launchURL(String link) async =>
-      await canLaunch(link) ? await launch(link) : throw 'Could not launch ';
+  Future<void> _launchURL(Uri url) async {
+    await canLaunchUrl(url)
+        ? await launchUrl(url)
+        : print('could_not_launch_this_app');
+  }
 
   // ignore: non_constant_identifier_names
   Container widget_container() {
@@ -433,14 +436,14 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  primary: Colors.black,
+                  backgroundColor: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
                 AppIcons.github,
               ),
               onPressed: () {
-                _launchURL(link[i]);
+                _launchURL(Uri.parse(link[i]));
               },
             )));
       } else if (type[i] == 2) {
@@ -449,14 +452,14 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  primary: Colors.black,
+                  backgroundColor: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
                 Icons.animation,
               ),
               onPressed: () {
-                _launchURL(link[i]);
+                _launchURL(Uri.parse(link[i]));
               },
             )));
       } else if (type[i] == 3) {
@@ -465,14 +468,14 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  primary: Colors.black,
+                  backgroundColor: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
                 Icons.read_more_rounded,
               ),
               onPressed: () {
-                _launchURL(link[i]);
+                _launchURL(Uri.parse(link[i]));
               },
             )));
       } else if (type[i] == 4) {
@@ -481,14 +484,14 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  primary: Colors.black,
+                  backgroundColor: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
                 Icons.article_rounded,
               ),
               onPressed: () {
-                _launchURL(link[i]);
+                _launchURL(Uri.parse(link[i]));
               },
             )));
       } else if (type[i] == 5) {
@@ -497,14 +500,14 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  primary: Colors.black,
+                  backgroundColor: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
                 Icons.link_rounded,
               ),
               onPressed: () {
-                _launchURL(link[i]);
+                _launchURL(Uri.parse(link[i]));
               },
             )));
       } else if (type[i] == 6) {
@@ -513,14 +516,14 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  primary: Colors.black,
+                  backgroundColor: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
                 Icons.play_arrow_rounded,
               ),
               onPressed: () {
-                _launchURL(link[i]);
+                _launchURL(Uri.parse(link[i]));
               },
             )));
       }
@@ -644,7 +647,7 @@ class Projects {
                                           6 * 16 + 6, 7 * 16 + 8),
                                     )),
                                 onPressed: () {
-                                  _launchURL(projectLink);
+                                  _launchURL(Uri.parse(projectLink));
                                 },
                               )
                             ],

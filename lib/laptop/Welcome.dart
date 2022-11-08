@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Welcome {
-  var height, width, _artboard;
-  Welcome(this.height, this.width, this._artboard);
+  var height, width, location;
+  Welcome(this.height, this.width, this.location);
   Stack welcome() {
     return Stack(
       children: [
@@ -15,12 +15,15 @@ class Welcome {
               padding: const EdgeInsets.all(10.0),
               child: Stack(
                 children: [
-                  _artboard != null
-                      ? Rive(
-                          artboard: _artboard,
-                          fit: BoxFit.cover,
-                        )
-                      : Container(),
+                  RiveAnimation.asset(
+                    location,
+                  )
+                  // _artboard != null
+                  //     ? Rive(
+                  //         artboard: _artboard,
+                  //         fit: BoxFit.cover,
+                  //       )
+                  //     : Container(),
                 ],
               )),
         ),
@@ -94,9 +97,15 @@ class Welcome {
     );
   }
 
-  void _launchURL(_url) async => await canLaunch(_url)
-      ? await launch(_url)
-      : throw 'Could not launch $_url';
+  Future<void> _launchURL(Uri url) async {
+    await canLaunchUrl(url)
+        ? await launchUrl(url)
+        : print('could_not_launch_this_app');
+  }
+
+  // void _launchURL(_url) async => await canLaunch(_url)
+  //     ? await launch(_url)
+  //     : throw 'Could not launch $_url';
 
   Container download() {
     return Container(
@@ -114,8 +123,8 @@ class Welcome {
                           borderRadius: BorderRadius.circular(30.0),
                           side: BorderSide(color: Colors.pinkAccent[400])))),
               onPressed: () async {
-                _launchURL(
-                    "https://drive.google.com/file/d/1AS9ZU0JDcxeLlP0dfq81Yocy0nYhXwOy/view?usp=sharing");
+                _launchURL(Uri.parse(
+                    "https://drive.google.com/file/d/1AS9ZU0JDcxeLlP0dfq81Yocy0nYhXwOy/view?usp=sharing"));
               },
               child: Padding(
                 padding: const EdgeInsets.all(15),

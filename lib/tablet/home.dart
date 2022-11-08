@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/tablet/CopyRight.dart';
 import 'package:portfolio/tablet/Education.dart';
 import 'package:portfolio/tablet/Welcome.dart';
 import 'package:portfolio/tablet/about_me.dart';
-import 'package:rive/rive.dart';
 import 'Experience.dart';
 import 'Projects.dart';
-import 'about_me.dart';
 import 'contact_me.dart';
 import 'skills.dart';
 
@@ -23,7 +20,6 @@ class MyHomePageTablet extends StatefulWidget {
 
 class _MyHomePageTabletState extends State<MyHomePageTablet> {
   final keyWelcome = GlobalKey();
-  Artboard _artboard;
   // ignore: non_constant_identifier_names
   ScrollController controller_of_list;
   Welcome welcome;
@@ -38,19 +34,8 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
   @override
   void initState() {
     controller_of_list = ScrollController();
-    _loadRiveFile();
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => {});
-  }
-
-  _loadRiveFile() async {
-    final data = await rootBundle.load('assets/animations/mobile.riv');
-    final file = RiveFile();
-    if (file.import(data)) {
-      final artboard = file.mainArtboard;
-      artboard.addController(SimpleAnimation('Animation 1'));
-      setState(() => _artboard = artboard);
-    }
   }
 
   @override
@@ -173,7 +158,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
               leading: Builder(
                 builder: (context) => ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.pink.withOpacity(0),
+                    backgroundColor: Colors.pink.withOpacity(0),
                     //shadowColor: Colors.pinkAccent,
                   ),
                   child: Icon(
@@ -207,7 +192,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
   }
 
   Center child(var height, var width) {
-    this.welcome = Welcome(height, width, _artboard);
+    this.welcome = Welcome(height, width, 'assets/animations/mobile.riv');
     this.aboutme = about_me(height, width);
     this.skill = skills(height, width);
     this.projects = Projects(height, width);

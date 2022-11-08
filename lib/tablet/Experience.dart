@@ -8,10 +8,6 @@ class Experience {
   final height, width;
   Experience(this.height, this.width);
 
-  // void _launchURL(_url) async => await canLaunch(_url)
-  //     ? await launch(_url)
-  //     : throw 'Could not launch $_url';
-
   // ignore: non_constant_identifier_names
   Container experience() {
     return Container(
