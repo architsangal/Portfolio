@@ -232,7 +232,7 @@ class contact_me {
                     child: Text(
                       "I would love to hear from you! Whether you " +
                           "have a question, want to discuss your project" +
-                          " and ideas, or just for a general chit-chat. Drop me a message here ->",
+                          " and ideas, or just for a general chit-chat. Drop me a message here:",
                       overflow: TextOverflow.clip,
                       softWrap: true,
                       textAlign: TextAlign.center,
