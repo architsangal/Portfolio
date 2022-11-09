@@ -34,20 +34,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     controller_of_list = ScrollController();
-    // _loadRiveFile();
+    Projects.scroller = controller_of_list;
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => {});
   }
-
-  // _loadRiveFile() async {
-  //   final data = await rootBundle.load('assets/animations/web.riv');
-  //   final file = RiveFile();
-  //   if (file.import(data)) {
-  //     final artboard = file.mainArtboard;
-  //     artboard.addController(SimpleAnimation('Animation 1'));
-  //     setState(() => _artboard = artboard);
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {

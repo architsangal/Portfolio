@@ -34,6 +34,7 @@ class _MyHomePageTabletState extends State<MyHomePageTablet> {
   @override
   void initState() {
     controller_of_list = ScrollController();
+    Projects.scroller = controller_of_list;
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => {});
   }
