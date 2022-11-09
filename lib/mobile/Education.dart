@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/TextConstants.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -59,7 +60,7 @@ class Education {
                       educationField(
                           "International Institute of Information Technology Bangalore",
                           "Integrated M.Tech. in Computer Science (2019 - 2024)",
-                          "CGPA: 3.53/4"),
+                          "CGPA: " + TextConstants.CGPA + "/4"),
                       educationField(
                           "Gautam International Senior Secondary School, Dehradun",
                           "Higher Secondary Education (2016 - 2018)",
@@ -101,8 +102,8 @@ class Education {
                                 color: Color.fromARGB(
                                     255, 3 * 1 + 4, 4 * 2 + 7, 6 * 4 + 14))))),
                 onPressed: () async {
-                  _launchURL(
-                      Uri.parse("https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing"));
+                  _launchURL(Uri.parse(
+                      "https://drive.google.com/file/d/14zlF74qR8eExxwNoMua2WVc--jyT2U5o/view?usp=sharing"));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(15),

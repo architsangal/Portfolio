@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../TextConstants.dart';
+
 class Education {
   final height, width;
   Education(this.height, this.width);
@@ -58,7 +60,7 @@ class Education {
                         educationField(
                             "International Institute of Information Technology Bangalore",
                             "Integrated M.Tech. in Computer Science (2019 - 2024)",
-                            "CGPA: 3.61/4"),
+                            "CGPA: " + TextConstants.CGPA + "/4"),
                         educationField(
                             "Gautam International Senior Secondary School, Dehradun",
                             "Higher Secondary Education (2016 - 2018)",

@@ -60,7 +60,7 @@ class Education {
                       educationField(
                           "International Institute of Information Technology Bangalore",
                           "Integrated M.Tech. in Computer Science (2019 - 2024)",
-                          "CGPA: 3.53/4"),
+                          "CGPA: 3.61/4"),
                       educationField(
                           "Gautam International Senior Secondary School, Dehradun",
                           "Higher Secondary Education (2016 - 2018)",

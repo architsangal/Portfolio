@@ -13,7 +13,7 @@ import 'package:another_flushbar/flushbar.dart';
 // ignore: camel_case_types
 class contact_me {
   // ignore: non_constant_identifier_names
-  final key_of_form = GlobalKey<FormState>();
+  static final key_of_form = GlobalKey<FormState>();
 
   final height, width, context;
 
