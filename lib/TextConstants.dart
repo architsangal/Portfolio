@@ -1,5 +1,5 @@
 class TextConstants {
-  static const CGPA = "3.61";
+  static const CGPA = "3.65";
   static const ProjectsInfo = [
     [
       'assets/images/1.jpg',
