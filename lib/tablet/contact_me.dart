@@ -130,7 +130,7 @@ class contact_me {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   enableFeedback: true,
-                                  backgroundColor: Colors.pink,
+                                  primary: Colors.pink,
                                   shadowColor: Colors.pinkAccent,
                                   shape: CircleBorder(),
                                   side: BorderSide(color: Colors.pink)),
@@ -147,7 +147,7 @@ class contact_me {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   enableFeedback: true,
-                                  backgroundColor: Colors.pink,
+                                  primary: Colors.pink,
                                   shadowColor: Colors.pinkAccent,
                                   shape: CircleBorder(),
                                   side: BorderSide(color: Colors.pink)),
@@ -164,7 +164,7 @@ class contact_me {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   enableFeedback: true,
-                                  backgroundColor: Colors.pink,
+                                  primary: Colors.pink,
                                   shadowColor: Colors.pinkAccent,
                                   shape: CircleBorder(),
                                   side: BorderSide(color: Colors.pink)),
@@ -181,7 +181,7 @@ class contact_me {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   enableFeedback: true,
-                                  backgroundColor: Colors.pink,
+                                  primary: Colors.pink,
                                   shadowColor: Colors.pinkAccent,
                                   shape: CircleBorder(),
                                   side: BorderSide(color: Colors.pink)),
@@ -198,7 +198,7 @@ class contact_me {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   enableFeedback: true,
-                                  backgroundColor: Colors.pink,
+                                  primary: Colors.pink,
                                   shadowColor: Colors.pinkAccent,
                                   shape: CircleBorder(),
                                   side: BorderSide(color: Colors.pink)),
@@ -215,7 +215,7 @@ class contact_me {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   enableFeedback: true,
-                                  backgroundColor: Colors.pink,
+                                  primary: Colors.pink,
                                   shadowColor: Colors.pinkAccent,
                                   shape: CircleBorder(),
                                   side: BorderSide(color: Colors.pink)),

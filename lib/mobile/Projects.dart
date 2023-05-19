@@ -109,7 +109,7 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  backgroundColor: Colors.black,
+                  primary: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
@@ -126,7 +126,7 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  backgroundColor: Colors.black,
+                  primary: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
@@ -143,7 +143,7 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  backgroundColor: Colors.black,
+                  primary: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
@@ -160,7 +160,7 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  backgroundColor: Colors.black,
+                  primary: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
@@ -177,7 +177,7 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  backgroundColor: Colors.black,
+                  primary: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
@@ -194,7 +194,7 @@ class Projects {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   enableFeedback: true,
-                  backgroundColor: Colors.black,
+                  primary: Colors.black,
                   shape: CircleBorder(),
                   side: BorderSide(color: Colors.blue)),
               child: Icon(
