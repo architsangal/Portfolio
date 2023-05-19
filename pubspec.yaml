@@ -26,7 +26,7 @@ dependencies:
 
   rive: ^0.9.1
   cupertino_icons: ^1.0.2
-  google_fonts: ^3.0.1
+  google_fonts: 2.2.0 # ^3.0.1
   transparent_image: ^2.0.0
   auto_size_text: ^3.0.0
   fluttericon: ^2.0.0
